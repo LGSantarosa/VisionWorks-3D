@@ -1,0 +1,265 @@
+ajuda As screen:
+    Fill: |-
+        =Switch(
+            varCor,
+            Color.Yellow,
+            ColorValue("#fdee2f"),
+            Color.Black,
+            Color.Black,
+            Color.White,
+            Color.White,
+            Color.Black
+        )
+
+    Ajuda_1 As button:
+        BorderColor: =ColorFade(Color.Black, -15%)
+        Color: =varCorLetra
+        Fill: |-
+            =Switch(
+                varCor,
+                Color.Yellow,
+                ColorValue("#3b89bd"),
+                Color.Black,
+                Color.White,
+                Color.White,
+                ColorValue("#f8e458"),
+                Color.White
+            )
+        Font: =varFonte
+        Height: =80
+        HoverFill: |-
+            =Switch(varCor,Color.Yellow,ColorFade(ColorValue("#3b89bd"),50%),Color.Black,ColorFade(Color.Black,50%),Color.White,ColorFade(ColorValue("#f8e458"),50%),ColorFade(Color.Black,50%))
+        OnSelect: |-
+            =If(
+                TextInput3.Text = "",
+                Notify(
+                    "Caixa de texto vazia",
+                    NotificationType.Error
+                ),
+                If(
+                    UploadedImage1.Image = "abc",
+                    Office365Outlook.SendEmailV2(
+                        "luiz.santarosa-extern@renault.com",
+                        "Ajuda com o App",
+                        TextInput3.Text
+                    ),
+                    Office365Outlook.SendEmailV2(
+                        "luiz.santarosa-extern@renault.com",
+                        "Ajuda com o App",
+                        TextInput3.Text,
+                        {
+                            Attachments: {
+                                Name:AddMediaButton1.FileName,
+                                ContentBytes: UploadedImage1.Image,
+                                '@odata.type': ""
+                            }
+                        }
+                    )
+                ),
+                Notify(
+                    "Mensagem enviada com sucesso!",
+                    NotificationType.Success
+                ) & Reset(TextInput3) & Reset(AddMediaButton1) & Navigate(
+                    principal,
+                    ScreenTransition.UnCoverRight) & Set(varMedia,Blank()) & Set(varEmail,false)
+            
+            )
+        PressedBorderColor: =Color.Black
+        PressedColor: =
+        PressedFill: |-
+            =Switch(
+                varCor,
+                Color.Yellow,
+                ColorValue("#3b89bd"),
+                Color.Black,
+                Color.White,
+                Color.White,
+                ColorValue("#f8e458"),
+                Color.White
+            )
+        Size: =Sum(25 + varLetra)
+        Text: ="Enviar"
+        Width: =490
+        X: =75
+        Y: =If(varAdd=true,810,710)
+        ZIndex: =3
+
+    "'Logo estoque_1' As image":
+        Height: =230
+        Image: =Switch(varCor,Color.Yellow,'MicrosoftTeams-image (2)',Color.White,'MicrosoftTeams-image (2)',Color.Black,'MicrosoftTeams-image (6)','MicrosoftTeams-image (6)')
+        Width: =640
+        Y: =220
+        ZIndex: =4
+
+    Icon7_4 As icon.ChevronLeft:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =varCorBTT
+        Height: =75
+        HoverColor: |-
+            =Switch(
+                varCor,
+                Color.Yellow,
+                ColorFade(
+                    ColorValue("#3b89bd"),
+                    50%
+                ),
+                Color.Black,
+                ColorFade(
+                    Color.Black,
+                    90%
+                ),
+                Color.White,
+                ColorFade(
+                    ColorValue("#f8e458"),
+                    50%
+                ),
+                ColorFade(
+                    Color.Black,
+                    90%
+                )
+            )
+        Icon: =Icon.BackArrow
+        OnSelect: |-
+            =Navigate(
+                principal,
+                ScreenTransition.UnCoverRight
+            ) & Reset(TextInput3) & Reset(AddMediaButton1) & Set(
+                varMedia,
+                Blank()
+            ) & Set(
+                varEmail,
+                false
+            )
+        Width: =75
+        X: =25
+        Y: =1030
+        ZIndex: =5
+
+    Label3_6 As label:
+        Color: =varCorBTT
+        Font: =varFonte
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        OnSelect: =
+        Size: =25 + varLetra
+        Text: ="Voltar"
+        Width: =200
+        X: =105
+        Y: =1030
+        ZIndex: =6
+
+    "'Tooling Logo_4' As image":
+        Image: ='Logo Tooling - vetor'
+        OnSelect: =
+        Width: =280
+        X: =325
+        Y: =1012
+        ZIndex: =7
+
+    UploadedImage1 As image:
+        BorderColor: =If(varAdd=true,varCorBTT,RGBA(0, 0, 0, 0))
+        BorderThickness: =2
+        Fill: =
+        Height: =If(varAdd=true,150,0)
+        Image: =If(AddMediaButton1.Media=Blank(), "abc" , AddMediaButton1.Media)
+        ImagePosition: =ImagePosition.Fill
+        OnSelect: =Set(varEmail,true)
+        Visible: =varEmail
+        Width: =490
+        X: =75
+        Y: =If(varAdd=true,650,400)
+        ZIndex: =8
+
+    Group1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =11
+
+        TextInput3_1 As text:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =Switch(varCor,Color.Yellow,Color.Black,Color.Black,Color.Black,Color.White,Color.Black,Color.Black)
+            Default: =""
+            DisabledBorderColor: =RGBA(0, 0, 0, 1)
+            DisabledFill: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Font: =varFonte
+            Height: =200
+            HintText: =""
+            HoverBorderColor: =RGBA(0, 0, 0, 1)
+            HoverColor: =varCorLetra
+            HoverFill: =varCorHover
+            Mode: =TextMode.MultiLine
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Size: =21 + varLetra
+            Width: =490
+            X: =75
+            Y: =If(varAdd=true,440,500)
+            ZIndex: =1
+
+        TextInput3 As text:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderThickness: =0
+            Color: |-
+                =Switch(
+                    varCor,
+                    Color.Yellow,
+                    Color.Black,
+                    Color.Black,
+                    Color.Black,
+                    Color.White,
+                    Color.Black,
+                    Color.Black
+                )
+            Default: =""
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Font: =varFonte
+            Height: =177
+            HintText: ="Ajuda com o App"
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =varCorLetra
+            HoverFill: =
+            Mode: =TextMode.MultiLine
+            Size: =21 + varLetra
+            Width: =372
+            X: =87
+            Y: =If(varAdd=true,450,510)
+            ZIndex: =2
+
+        AddArquivo As icon.Attachment:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =Color.Black
+            Height: =80
+            HoverColor: =ColorFade(Self.Color, 80%)
+            Icon: =Icon.PaperClip
+            OnSelect: =Set(varAdd,true)
+            Width: =75
+            X: =480
+            Y: =AddMediaButton1.Y
+            ZIndex: =9
+
+        AddMediaButton1 As addMedia:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            ChangePictureText: =
+            Color: =RGBA(255, 255, 255, 0)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(255, 255, 255, 0)
+            Font: =varFonte
+            Height: =80
+            HoverBorderColor: =
+            OnChange: =Set(varEmail,true)
+            OnSelect: =Set(varEmail,true) & Set(varAdd,true)
+            PressedBorderColor: =
+            Size: =25 + varLetra
+            Text: =""
+            Width: =75
+            X: =480
+            Y: =TextInput3.Y
+            ZIndex: =10
+

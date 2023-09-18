@@ -1,0 +1,977 @@
+principal As screen:
+    BackgroundImage: =
+    Fill: |-
+        =Switch(
+            varCor,
+            Color.Yellow,
+            ColorValue("#fdee2f"),
+            Color.Black,
+            Color.Black,
+            Color.White,
+            Color.White,
+            Color.Black
+        )
+    ImagePosition: =ImagePosition.Fill
+
+    Label1 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =varCorLetra
+        Fill: |-
+            =Switch(varCor,Color.Yellow,ColorValue("#3b89bd"),Color.Black,Color.White,Color.White,ColorValue("#f8e458"),Color.White)
+        Font: =varFonte
+        Height: =60 + varLetra
+        Size: =varLetra + 22
+        Text: =If(Icon5.Icon = Icon.Globe,"conectado","desconectado")
+        Visible: =varGlobo
+        Width: =If(Label1.Text="Conectado",If(varLetra<10,220,250) + varLetra, If(varLetra<10,210,240) + varLetra)
+        X: =If(varLetra<10,Icon5.X -230,Icon5.X -280)
+        Y: =If(varLetra<15,Icon5.Y + 10,Icon5.Y)
+        ZIndex: =2
+
+    Ajuda As button:
+        BorderColor: =ColorFade(Color.Black, -15%)
+        Color: =varCorLetra
+        Fill: |-
+            =Switch(
+                varCor,
+                Color.Yellow,
+                ColorValue("#3b89bd"),
+                Color.Black,
+                Color.White,
+                Color.White,
+                ColorValue("#f8e458"),
+                Color.White
+            )
+        Font: =varFonte
+        Height: =80
+        HoverFill: |-
+            =Switch(
+                varCor,
+                Color.Yellow,
+                ColorFade(
+                    ColorValue("#3b89bd"),
+                    50%
+                ),
+                Color.Black,
+                ColorFade(
+                    Color.Black,
+                    50%
+                ),
+                Color.White,
+                ColorFade(
+                    ColorValue("#f8e458"),
+                    50%
+                ),
+                ColorFade(
+                    Color.Black,
+                    50%
+                )
+            )
+        OnSelect: |-
+            =Navigate(
+                ajuda,
+                ScreenTransition.Cover
+            ) & Set(
+                varLetra,
+                Slider1.Value
+            ) & Set(
+                varAdd,
+                false
+            ) & Reset(AddMediaButton1);
+            If(
+                varCor = Color.Yellow,
+                Set(
+                    varCor,
+                    Color.Yellow
+                ) & Set(
+                    varCorBTT,
+                    ColorValue("#3b89bd")
+                ) & Set(
+                    varCorHover,
+                    ColorFade(
+                        ColorValue("#3b89bd"),
+                        50%
+                    )
+                ) & Set(
+                    varCorLetra,
+                    Color.White
+                ) & Set(
+                    varImg,
+                    'Renault Preta'
+                ) & Set(
+                    varEstoqueLogo,
+                    'MicrosoftTeams-image (2)'
+                ),
+                If(
+                    varCor = Color.White,
+                    Set(
+                        varCor,
+                        Color.White
+                    ) & Set(
+                        varCorBTT,
+                        Color.Black
+                    ) & Set(
+                        varCorHover,
+                        ColorFade(
+                            Color.Black,
+                            90%
+                        )
+                    ) & Set(
+                        varCorLetra,
+                        Color.Black
+                    ) & Set(
+                        varImg,
+                        'Renault Preta'
+                    ),
+                    Set(
+                        varEstoqueLogo,
+                        'MicrosoftTeams-image (2)'
+                    ),
+                    If(
+                        varCor = Color.Black,
+                        Set(
+                            varCor,
+                            Color.Black
+                        ) & Set(
+                            varCorBTT,
+                            Color.White
+                        ) & Set(
+                            varCorHover,
+                            ColorFade(
+                                Color.Black,
+                                90%
+                            )
+                        ) & Set(
+                            varCorLetra,
+                            Color.Black
+                        ) & Set(
+                            varImg,
+                            'Renault Branca'
+                        ) & Set(
+                            varEstoqueLogo,
+                            'MicrosoftTeams-image (6)'
+                        )
+                    )
+                )
+            )
+        PressedBorderColor: =Color.Black
+        PressedColor: =
+        PressedFill: |-
+            =Switch(
+                varCor,
+                Color.Yellow,
+                ColorValue("#3b89bd"),
+                Color.Black,
+                Color.White,
+                Color.White,
+                ColorValue("#f8e458"),
+                Color.White
+            )
+        Size: =Sum(25 + varLetra)
+        Text: ="Ajuda"
+        Width: =490
+        X: =75
+        Y: =800
+        ZIndex: =3
+
+    Configuracao As button:
+        BorderColor: =ColorFade(Color.Black, -15%)
+        Color: =varCorLetra
+        Fill: |-
+            =Switch(
+                varCor,
+                Color.Yellow,
+                ColorValue("#3b89bd"),
+                Color.Black,
+                Color.White,
+                Color.White,
+                ColorValue("#f8e458"),
+                Color.White
+            )
+        Font: =varFonte
+        Height: =80
+        HoverFill: |-
+            =Switch(
+                varCor,
+                Color.Yellow,
+                ColorFade(
+                    ColorValue("#3b89bd"),
+                    50%
+                ),
+                Color.Black,
+                ColorFade(
+                    Color.Black,
+                    50%
+                ),
+                Color.White,
+                ColorFade(
+                    ColorValue("#f8e458"),
+                    50%
+                ),
+                ColorFade(
+                    Color.Black,
+                    50%
+                )
+            )
+        OnSelect: |-
+            =UpdateContext({VarConfig:true}); 
+        PressedBorderColor: =Color.Black
+        PressedColor: =
+        PressedFill: |-
+            =Switch(
+                varCor,
+                Color.Yellow,
+                ColorValue("#3b89bd"),
+                Color.Black,
+                Color.White,
+                Color.White,
+                ColorValue("#f8e458"),
+                Color.White
+            )
+        Size: =Sum(25 + varLetra)
+        Text: ="Configuração"
+        Width: =490
+        X: =75
+        Y: =700
+        ZIndex: =4
+
+    "'Localizar Button' As button":
+        BorderColor: =ColorFade(Color.Black, -15%)
+        Color: =varCorLetra
+        Fill: |-
+            =Switch(
+                varCor,
+                Color.Yellow,
+                ColorValue("#3b89bd"),
+                Color.Black,
+                Color.White,
+                Color.White,
+                ColorValue("#f8e458"),
+                Color.White
+            )
+        Font: =varFonte
+        Height: =80
+        HoverFill: |-
+            =Switch(
+                varCor,
+                Color.Yellow,
+                ColorFade(
+                    ColorValue("#3b89bd"),
+                    50%
+                ),
+                Color.Black,
+                ColorFade(
+                    Color.Black,
+                    50%
+                ),
+                Color.White,
+                ColorFade(
+                    ColorValue("#f8e458"),
+                    50%
+                ),
+                ColorFade(
+                    Color.Black,
+                    50%
+                )
+            )
+        OnSelect: |-
+            =Navigate(
+                localizar,
+                ScreenTransition.Cover
+            ) & Refresh('Estoque 3D') & Set(
+                varLetra,
+                Slider1.Value
+            ) & Set(
+                varCorLetra,
+                Color.White
+            );
+            If(
+                varCor = Color.Yellow,
+                Set(
+                    varCor,
+                    Color.Yellow
+                ) & Set(
+                    varCorBTT,
+                    ColorValue("#3b89bd")
+                ) & Set(
+                    varCorHover,
+                    ColorFade(
+                        ColorValue("#3b89bd"),
+                        50%
+                    )
+                ) & Set(
+                    varCorLetra,
+                    ColorValue("#3b89bd")
+                ) & Set(
+                    varImg,
+                    'Renault Preta'
+                ) & Set(
+                    varEstoqueLogo,
+                    'MicrosoftTeams-image (2)'
+                ),
+                If(
+                    varCor = Color.White,
+                    Set(
+                        varCor,
+                        Color.White
+                    ) & Set(
+                        varCorBTT,
+                        Color.Black
+                    ) & Set(
+                        varCorHover,
+                        ColorFade(
+                            Color.Black,
+                            90%
+                        )
+                    ) & Set(
+                        varCorLetra,
+                        Color.Black
+                    ) & Set(
+                        varImg,
+                        'Renault Preta'
+                    ),
+                    Set(
+                        varEstoqueLogo,
+                        'MicrosoftTeams-image (2)'
+                    ),
+                    If(
+                        varCor = Color.Black,
+                        Set(
+                            varCor,
+                            Color.Black
+                        ) & Set(
+                            varCorBTT,
+                            Color.White
+                        ) & Set(
+                            varCorHover,
+                            ColorFade(
+                                Color.Black,
+                                90%
+                            )
+                        ) & Set(
+                            varCorLetra,
+                            Color.White
+                        ) & Set(
+                            varImg,
+                            'Renault Branca'
+                        ) & Set(
+                            varEstoqueLogo,
+                            'MicrosoftTeams-image (6)'
+                        )
+                    )
+                )
+            )
+        PressedBorderColor: =Color.Black
+        PressedColor: =
+        PressedFill: |-
+            =Switch(
+                varCor,
+                Color.Yellow,
+                ColorValue("#3b89bd"),
+                Color.Black,
+                Color.White,
+                Color.White,
+                ColorValue("#f8e458"),
+                Color.White
+            )
+        Size: =Sum(25 + varLetra)
+        Text: ="Localizar"
+        Width: =490
+        X: =75
+        Y: =500
+        ZIndex: =5
+
+    "'Movimentacao Button' As button":
+        BorderColor: =ColorFade(Color.Black, -15%)
+        Color: =varCorLetra
+        Fill: |-
+            =Switch(
+                varCor,
+                Color.Yellow,
+                ColorValue("#3b89bd"),
+                Color.Black,
+                Color.White,
+                Color.White,
+                ColorValue("#f8e458"),
+                Color.White
+            )
+        Font: =varFonte
+        Height: =80
+        HoverFill: |-
+            =Switch(
+                varCor,
+                Color.Yellow,
+                ColorFade(
+                    ColorValue("#3b89bd"),
+                    50%
+                ),
+                Color.Black,
+                ColorFade(
+                    Color.Black,
+                    50%
+                ),
+                Color.White,
+                ColorFade(
+                    ColorValue("#f8e458"),
+                    50%
+                ),
+                ColorFade(
+                    Color.Black,
+                    50%
+                )
+            )
+        OnSelect: |-
+            =Navigate(
+                movimentacao,
+                ScreenTransition.Cover
+            ) & Refresh('Estoque 3D') & Set(
+                varLetra,
+                Slider1.Value
+            ) & Set(
+                varCorLetra,
+                Color.White
+            );
+            If(
+                varCor = Color.Yellow,
+                Set(
+                    varCor,
+                    Color.Yellow
+                ) & Set(
+                    varCorBTT,
+                    ColorValue("#3b89bd")
+                ) & Set(
+                    varCorHover,
+                    ColorFade(
+                        ColorValue("#3b89bd"),
+                        50%
+                    )
+                ) & Set(
+                    varCorLetra,
+                    ColorValue("#3b89bd")
+                ) & Set(
+                    varImg,
+                    'Renault Preta'
+                ) & Set(
+                    varEstoqueLogo,
+                    'MicrosoftTeams-image (2)'
+                ),
+                If(
+                    varCor = Color.White,
+                    Set(
+                        varCor,
+                        Color.White
+                    ) & Set(
+                        varCorBTT,
+                        Color.Black
+                    ) & Set(
+                        varCorHover,
+                        ColorFade(
+                            Color.Black,
+                            90%
+                        )
+                    ) & Set(
+                        varCorLetra,
+                        Color.Black
+                    ) & Set(
+                        varImg,
+                        'Renault Preta'
+                    ),
+                    Set(
+                        varEstoqueLogo,
+                        'MicrosoftTeams-image (2)'
+                    ),
+                    If(
+                        varCor = Color.Black,
+                        Set(
+                            varCor,
+                            Color.Black
+                        ) & Set(
+                            varCorBTT,
+                            Color.White
+                        ) & Set(
+                            varCorHover,
+                            ColorFade(
+                                Color.Black,
+                                90%
+                            )
+                        ) & Set(
+                            varCorLetra,
+                            Color.White
+                        ) & Set(
+                            varImg,
+                            'Renault Branca'
+                        ) & Set(
+                            varEstoqueLogo,
+                            'MicrosoftTeams-image (6)'
+                        )
+                    )
+                )
+            )
+        PressedBorderColor: =Color.Black
+        PressedColor: =
+        PressedFill: |-
+            =Switch(
+                varCor,
+                Color.Yellow,
+                ColorValue("#3b89bd"),
+                Color.Black,
+                Color.White,
+                Color.White,
+                ColorValue("#f8e458"),
+                Color.White
+            )
+        Size: =Sum(25 + varLetra)
+        Text: ="Movimentar"
+        Width: =490
+        X: =75
+        Y: =600
+        ZIndex: =6
+
+    "'Tooling Logo' As image":
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Image: ='Logo Tooling - vetor'
+        OnSelect: |-
+            =/*Navigate(login);;
+            
+            If( varCor = Color.Yellow; Set(varCor;Color.Yellow) & Set(varCorBTT;ColorValue("#3b89bd")) & Set(varCorHover;ColorFade(ColorValue("#3b89bd");50%)) & Set(varEstoqueLogo;'MicrosoftTeams-image (2)') & Set(varCorLetra;Color.White);
+            
+                If( varCor = Color.White; Set(varCor;Color.White) & Set(varCorBTT;Color.Black) & Set(varCorHover;               ColorFade(Color.Black;50%));
+                
+                    If( varCor = Color.Black; Set(varCor;Color.Black) & Set(varCorBTT;Color.White) & Set(varCorHover;               ColorFade(Color.Black;50%))
+            
+                    )
+                )
+            )*/
+        Width: =490
+        X: =75
+        Y: =1000
+        ZIndex: =7
+
+    "'Logo estoque' As image":
+        Height: =230
+        Image: =Switch(varCor,Color.Yellow,'MicrosoftTeams-image (2)',Color.White,'MicrosoftTeams-image (2)',Color.Black,'MicrosoftTeams-image (6)','MicrosoftTeams-image (6)')
+        Width: =640
+        Y: =220
+        ZIndex: =8
+
+    Icon5_1 As icon.Settings:
+        BorderColor: =RGBA(255, 255, 255, 1)
+        Color: |-
+            =Switch(varCor,Color.Yellow,ColorValue("#3b89bd"),Color.Black,Color.White,Color.White,Color.Black,Color.White)
+        Height: =70
+        HoverColor: =Switch(varCor,Color.Yellow,ColorFade(Color.Blue,50%),Color.Black,ColorFade(Color.Black,50%),Color.White,ColorFade(Color.Black,50%),ColorFade(Color.Black,50%))
+        Icon: =Icon.Settings
+        OnSelect: =
+        Visible: =false
+        Width: =70
+        X: =536
+        Y: =984
+        ZIndex: =9
+
+    Acessivel As groupContainer:
+        Height: =1136
+        Visible: =VarConfig
+        Width: =640
+        ZIndex: =11
+
+        PopUp_acessibilidade As rectangle:
+            Fill: =RGBA(117, 117, 117, 0.93)
+            Height: =1136
+            TabIndex: =0
+            Width: =640
+            ZIndex: =1
+
+        Fontes As button:
+            AutoDisableOnSelect: =false
+            BorderColor: =ColorFade(Color.Black, -15%)
+            BorderThickness: =0.5
+            Color: =varCorLetra
+            Fill: |-
+                =Switch(varCor,Color.Yellow,ColorValue("#3b89bd"),Color.Black,Color.White,Color.White,ColorValue("#f8e458"),Color.White)
+            Font: =varFonte
+            Height: =120
+            HoverColor: =Color.White
+            HoverFill: |-
+                =Switch(varCor,Color.Yellow,ColorFade(ColorValue("#3b89bd"),50%),Color.Black,ColorFade(Color.Black,50%),Color.White,ColorFade(ColorValue("#f8e458"),50%),ColorFade(Color.Black,50%))
+            OnSelect: =If(varFonte=Font.'Lato Light',Set(varFonte,Font.'Open Sans'),Set(varFonte,Font.'Lato Light'))
+            PressedColor: =varCorLetra
+            PressedFill: =Self.Fill
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Size: =Sum(25 + varLetra)
+            Text: ="Fonte"
+            Width: =540
+            X: =50
+            Y: =260
+            ZIndex: =2
+
+        Fechar As button:
+            AutoDisableOnSelect: =false
+            BorderColor: =ColorFade(Color.Black, -15%)
+            BorderThickness: =0.5
+            Color: =varCorLetra
+            Fill: |-
+                =Switch(varCor,Color.Yellow,ColorValue("#3b89bd"),Color.Black,Color.White,Color.White,ColorValue("#f8e458"),Color.White)
+            Font: =varFonte
+            Height: =120
+            HoverColor: =Color.White
+            HoverFill: |-
+                =Switch(varCor,Color.Yellow,ColorFade(ColorValue("#3b89bd"),50%),Color.Black,ColorFade(Color.Black,50%),Color.White,ColorFade(ColorValue("#f8e458"),50%),ColorFade(Color.Black,50%))
+            OnSelect: |+
+                =UpdateContext({VarConfig:false})
+                
+            PressedColor: =
+            PressedFill: =Self.Fill
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Size: =Sum(25 + varLetra)
+            Text: ="Fechar"
+            Width: =540
+            X: =50
+            Y: =967
+            ZIndex: =7
+
+        Fontes_1 As button:
+            AutoDisableOnSelect: =false
+            BorderThickness: =0.5
+            Color: =varCorLetra
+            Fill: |-
+                =Switch(varCor,Color.Yellow,ColorValue("#3b89bd"),Color.Black,Color.White,Color.White,ColorValue("#f8e458"),Color.White)
+            Font: =varFonte
+            Height: =120
+            HoverColor: =Color.White
+            HoverFill: |-
+                =Switch(varCor,Color.Yellow,ColorFade(ColorValue("#3b89bd"),50%),Color.Black,ColorFade(Color.Black,50%),Color.White,ColorFade(ColorValue("#f8e458"),50%),ColorFade(Color.Black,50%))
+            OnSelect: =Set(varLetra,Sum(varLetra,-2))
+            PressedColor: =varCorLetra
+            PressedFill: =Self.Fill
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Size: =Sum(25, varLetra)
+            Text: ="A-"
+            Visible: =false
+            Width: =245
+            X: =50
+            Y: =473
+            ZIndex: =8
+
+        Fontes_2 As button:
+            AutoDisableOnSelect: =false
+            BorderThickness: =0.5
+            Color: =varCorLetra
+            Fill: |-
+                =Switch(varCor,Color.Yellow,ColorValue("#3b89bd"),Color.Black,Color.White,Color.White,ColorValue("#f8e458"),Color.White)
+            Font: =varFonte
+            Height: =120
+            HoverColor: =Color.White
+            HoverFill: |-
+                =Switch(varCor,Color.Yellow,ColorFade(ColorValue("#3b89bd"),50%),Color.Black,ColorFade(Color.Black,50%),Color.White,ColorFade(ColorValue("#f8e458"),50%),ColorFade(Color.Black,50%))
+            OnSelect: =Set(varLetra,Sum(varLetra, 2))
+            PressedColor: =varCorLetra
+            PressedFill: =Self.Fill
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Size: =Sum(25 + varLetra)
+            Text: ="A+"
+            Visible: =false
+            Width: =245
+            X: =345
+            Y: =473
+            ZIndex: =9
+
+        "'Aumentar fonte' As group":
+            Height: =5
+            Width: =5
+            X: =60
+            Y: =60
+            ZIndex: =13
+
+            Fontes_3 As button:
+                AutoDisableOnSelect: =false
+                BorderColor: =ColorFade(Color.Black, -15%)
+                BorderThickness: =0.5
+                Color: =varCorLetra
+                Fill: |-
+                    =Switch(varCor,Color.Yellow,ColorValue("#3b89bd"),Color.Black,Color.White,Color.White,ColorValue("#f8e458"),Color.White)
+                Font: =varFonte
+                Height: =120
+                HoverColor: =Color.White
+                HoverFill: |-
+                    =Switch(varCor,Color.Yellow,ColorFade(ColorValue("#3b89bd"),50%),Color.Black,ColorFade(Color.Black,50%),Color.White,ColorFade(ColorValue("#f8e458"),50%),ColorFade(Color.Black,50%))
+                OnSelect: =
+                PressedColor: =varCorLetra
+                PressedFill: =Self.Fill
+                RadiusBottomLeft: =15
+                RadiusBottomRight: =15
+                RadiusTopLeft: =15
+                RadiusTopRight: =15
+                Size: =Sum(25 + varLetra)
+                Text: =""
+                Width: =540
+                X: =50
+                Y: =400
+                ZIndex: =11
+
+            Slider1 As slider:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Default: =5
+                HandleFill: |-
+                    =Switch(varCor,Color.Yellow,ColorValue("#3b89bd"),Color.Black,Color.White,Color.White,ColorValue("#f8e458"),Color.White)
+                HandleSize: =55
+                Height: =120
+                Max: =20
+                OnChange: |-
+                    =UpdateContext({varLetra:(Slider1.Value)})
+                PressedBorderColor: =varCorBTT
+                RailFill: |-
+                    =Switch(varCor,Color.Yellow,ColorFade(ColorValue("#3b89bd"),95%),Color.Black,ColorFade(Color.Black,95%),Color.White,ColorFade(ColorValue("#3e77b6"),95%),ColorFade(Color.Black,95%))
+                RailThickness: =10
+                ValueFill: |-
+                    =Switch(varCor,Color.Yellow,ColorFade(ColorValue("#3b89bd"),50%),Color.Black,ColorFade(Color.Black,60%),Color.White,ColorFade(ColorValue("#3e77b6"),60%),ColorFade(Color.Black,60%))
+                Width: =465
+                X: =87
+                Y: =400
+                ZIndex: =12
+
+        Fontes_4 As button:
+            AutoDisableOnSelect: =false
+            BorderColor: =ColorFade(Color.Black, -15%)
+            BorderThickness: =0.5
+            Color: =varCorLetra
+            Fill: |-
+                =Switch(varCor,Color.Yellow,ColorValue("#3b89bd"),Color.Black,Color.White,Color.White,ColorValue("#f8e458"),Color.White)
+            Font: =varFonte
+            Height: =If(Slider1.Value<14,120,130 + varLetra)
+            HoverColor: =Color.White
+            HoverFill: |-
+                =Switch(varCor,Color.Yellow,ColorFade(ColorValue("#3b89bd"),50%),Color.Black,ColorFade(Color.Black,50%),Color.White,ColorFade(ColorValue("#f8e458"),50%),ColorFade(Color.Black,50%))
+            OnSelect: |-
+                =UpdateContext({varCor:Color.Black}) && UpdateContext({varImg:'Renault Branca'}) && UpdateContext({varCorLetra:Color.Black}) && UpdateContext({varCorBTT:Color.White}) && UpdateContext({varCorHover:ColorFade(Color.Black,50%)}) && Reset(Slider1) && Set(varFonte,Font.'Lato Light')
+            PressedColor: =varCorLetra
+            PressedFill: =Self.Fill
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Size: =Sum(25 + varLetra)
+            Text: ="Remover configurações"
+            Width: =540
+            X: =51
+            Y: =540
+            ZIndex: =15
+
+        Group2 As group:
+            Height: =5
+            Width: =5
+            X: =60
+            Y: =60
+            ZIndex: =15
+
+            Label4 As label:
+                Align: =Align.Right
+                Color: =varCorLetra
+                DisplayMode: =DisplayMode.View
+                Height: =116
+                Size: =35
+                Text: ="+"
+                Width: =38
+                X: =551
+                Y: =400
+                ZIndex: =13
+
+            Label4_1 As label:
+                Color: =varCorLetra
+                DisplayMode: =DisplayMode.View
+                Height: =96
+                Size: =35
+                Text: ="_"
+                Width: =37
+                X: =51
+                Y: =386
+                ZIndex: =14
+
+        Group3 As group:
+            Height: =5
+            Width: =5
+            X: =60
+            Y: =60
+            ZIndex: =16
+
+            Cores As button:
+                BorderColor: =ColorFade(Color.Black,20%)
+                BorderThickness: =5
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                DisabledColor: =RGBA(0, 0, 0, 1)
+                DisabledFill: =RGBA(255, 255, 255, 1)
+                DisplayMode: =DisplayMode.Disabled
+                Fill: =RGBA(255, 255, 255, 1)
+                Font: =varFonte
+                Height: =200
+                HoverBorderColor: =ColorFade(Self.BorderColor, 100%)
+                HoverFill: =ColorFade(Color.White, 100%)
+                RadiusBottomLeft: =15
+                RadiusBottomRight: =15
+                RadiusTopLeft: =15
+                RadiusTopRight: =15
+                Size: =30
+                Text: ="Cores"
+                VerticalAlign: =VerticalAlign.Top
+                Width: =540
+                X: =50
+                Y: =40
+                ZIndex: =3
+
+            color_branco As button:
+                BorderColor: =ColorFade(Color.Black, 20%)
+                BorderThickness: =5
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =100
+                HoverFill: =ColorFade(Color.GhostWhite,20%)
+                OnSelect: |-
+                    =UpdateContext({varCor:Color.White}) && UpdateContext({varImg:'Renault Preta'});
+                    
+                    UpdateContext({varCorLetra:Color.Black});
+                    
+                    UpdateContext({varCorBTT:Color.Black});
+                    
+                    UpdateContext({varCorHover:ColorFade(Color.Black,50%)})
+                PressedBorderColor: =ColorFade(Color.Black,50%)
+                PressedFill: =ColorFade(Self.Color,50%)
+                RadiusBottomLeft: =100
+                RadiusBottomRight: =100
+                RadiusTopLeft: =100
+                RadiusTopRight: =100
+                Size: =24
+                Text: =""
+                Width: =100
+                X: =270
+                Y: =105
+                ZIndex: =4
+
+            color_preto As button:
+                BorderColor: =ColorFade(Color.Black, 20%)
+                BorderThickness: =5
+                Fill: =RGBA(0, 0, 0, 1)
+                Height: =100
+                HoverFill: =ColorFade(Color.Black,20%)
+                OnSelect: |-
+                    =UpdateContext({varCor:Color.Black}) && UpdateContext({varImg:'Renault Branca'});
+                    
+                    UpdateContext({varCorLetra:Color.Black});
+                    
+                    UpdateContext({varCorBTT:Color.White});
+                    
+                    UpdateContext({varCorHover:ColorFade(Color.Black,50%)})
+                PressedFill: =ColorFade(Color.Black,50%)
+                RadiusBottomLeft: =100
+                RadiusBottomRight: =100
+                RadiusTopLeft: =100
+                RadiusTopRight: =100
+                Size: =24
+                Text: =""
+                Width: =100
+                X: =450
+                Y: =105
+                ZIndex: =5
+
+            color_amarelo As button:
+                BorderColor: |-
+                    =ColorValue("#3e77b6")
+                BorderThickness: =5
+                Fill: |-
+                    =ColorValue("#fdee2f")
+                Height: =100
+                HoverFill: =ColorFade(Color.Yellow ,20%)
+                OnSelect: |-
+                    =UpdateContext({varCor:Color.Yellow}) && UpdateContext({varImg:'Renault Preta'});
+                    
+                    UpdateContext({varCorLetra:Color.White});
+                    
+                    UpdateContext({varCorBTT:ColorValue("#3e77b6")});
+                    
+                    UpdateContext({varCorHover:ColorFade(ColorValue("#3e77b6"),50%)})
+                PressedBorderColor: =Self.BorderColor
+                PressedFill: =ColorFade(Self.Fill,50%)
+                RadiusBottomLeft: =100
+                RadiusBottomRight: =100
+                RadiusTopLeft: =100
+                RadiusTopRight: =100
+                Size: =24
+                Text: =""
+                Width: =99
+                X: =78
+                Y: =105
+                ZIndex: =6
+
+    Group5 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =80
+        ZIndex: =12
+
+        Icon5 As icon.Globe:
+            Color: |-
+                =Switch(
+                    varCor,
+                    Color.Yellow,
+                    ColorValue("#3b89bd"),
+                    Color.Black,
+                    Color.White,
+                    Color.White,
+                    ColorValue("#f8e458"),
+                    Color.White
+                )
+            Height: =80
+            Icon: |-
+                =If(
+                    Connection.Connected = false Or ConnectionSync.ConnectedError Or ConnectionSync.ConnectedWithWarning Or ConnectionSync.NotConnected,
+                    Icon.GlobeNotConnected,
+                    Icon.Globe
+                )
+            OnSelect: |-
+                =If(
+                    varGlobo = false,
+                    Set(
+                        Start,
+                        true
+                    ) & Set(
+                        varGlobo,
+                        true
+                    ),
+                    Set(
+                        varGlobo,
+                        false
+                    ) & Set(
+                        Start,
+                        false
+                    ) & Reset(Timer2)
+                )
+            Width: =80
+            X: =530
+            Y: =40
+            ZIndex: =1
+
+        Timer2 As timer:
+            Duration: =2000
+            Height: =70
+            OnSelect: =
+            OnTimerEnd: =Set(varGlobo,false) & Set(Start,false)
+            OnTimerStart: =Set(varGlobo,true)
+            Start: =Start
+            Visible: =false
+            Width: =280
+            X: =60
+            Y: =60
+            ZIndex: =10
+

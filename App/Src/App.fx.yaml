@@ -1,0 +1,48 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |-
+        =Set(
+            varLetra,
+            5
+        );
+        Set(
+            varCor,
+            Color.Black
+        ); 
+        Set(
+            varImg,
+            'Renault Branca'
+        );
+        Set(
+            varCorLetra,
+            Color.Black
+        );
+        Set(
+            varCorBTT,
+            Color.White
+        );
+        Set(
+            varCorHover,
+            ColorFade(
+                Color.Black,
+                90%
+            )
+        );
+        Set(
+            varFonte,
+            Font.'Lato Light'
+        );
+        Set(
+            varBusca,
+            CONTROLEDEMATERIAIS.Fabricante
+        )
+    StartScreen: =login
+    Theme: =PowerAppsTheme
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+

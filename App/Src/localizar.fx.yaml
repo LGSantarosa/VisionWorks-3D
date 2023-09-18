@@ -1,0 +1,373 @@
+localizar As screen:
+    BackgroundImage: =
+    Fill: |-
+        =Switch(
+            varCor,
+            Color.Yellow,
+            ColorValue("#fdee2f"),
+            Color.Black,
+            Color.Black,
+            Color.White,
+            Color.White,
+            Color.Black
+        )
+
+    "'Tooling Logo_2' As image":
+        Image: ='Logo Tooling - vetor'
+        OnSelect: =
+        Width: =280
+        X: =325
+        Y: =1020
+        ZIndex: =5
+
+    "'Logo Estoque_1' As image":
+        Height: =210
+        Image: =Switch(varCor,Color.Yellow,'MicrosoftTeams-image (2)',Color.White,'MicrosoftTeams-image (2)',Color.Black,'MicrosoftTeams-image (6)','MicrosoftTeams-image (6)')
+        Width: =640
+        ZIndex: =6
+
+    Container1 As groupContainer:
+        Height: =1136
+        Visible: =varImagem
+        Width: =640
+        ZIndex: =11
+
+        "'Logo Estoque_2' As image":
+            Height: =1136
+            Image: =If(IsBlank(varImagemProduto.Anexo),'Imagem não encontrada',varImagemProduto.Anexo.Full)
+            OnSelect: =Set(varImagem,false)
+            Visible: =varImagem
+            Width: =640
+            ZIndex: =1
+
+    Group4 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =17
+
+        Icon7_2 As icon.ChevronLeft:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =varCorBTT
+            Height: =75
+            HoverColor: =ColorFade(Self.Color,50%)
+            Icon: =Icon.BackArrow
+            OnSelect: |-
+                =Navigate(
+                    principal,
+                    ScreenTransition.UnCoverRight
+                ) & Reset(TextSearchBox1_2) & Refresh('Estoque 3D') & Reset(Radio1_4) & Reset(Radio1_5) & UpdateContext({varFiltro: false}) & Set(
+                    varCorLetra,
+                    Color.Black
+                ) & Reset(TextSearchBox1_2)
+            Width: =75
+            X: =25
+            Y: =1030
+            ZIndex: =3
+
+        Label3_3 As label:
+            Color: =varCorBTT
+            Font: =varFonte
+            FontWeight: =FontWeight.Bold
+            Height: =70
+            OnSelect: =
+            Size: =25 + varLetra
+            Text: ="Voltar"
+            Width: =220
+            X: =105
+            Y: =1030
+            ZIndex: =4
+
+    Group6 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =21
+
+        "Gallery2_1 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+            BorderColor: |-
+                =Switch(varCor,Color.Yellow,ColorValue("#3b89bd"),Color.Black,Color.White,Color.White,ColorValue("#f8e458"),Color.White)
+            DelayItemLoading: =true
+            Fill: |-
+                =Switch(varCor,Color.Yellow,ColorValue("#fdee2f"),Color.Black,Color.Black,Color.White,Color.White,Color.Black)
+            Height: =722
+            Items: |-
+                =Filter(
+                    'Estoque 3D',
+                    StartsWith(
+                        Título,
+                        TextSearchBox1_2.Text
+                    ) || StartsWith(
+                        Fabricante,
+                        TextSearchBox1_2.Text
+                    ),
+                    (Material.Value = Radio1_4.Selected.Value Or Radio1_4.Selected.Value = Blank()),
+                    (Cor.Value = Radio1_5.Selected.Value Or Radio1_5.Selected.Value = Blank())
+                )
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            OnSelect: =Set(varImagemProduto,Gallery2_1.Selected) && If(IsBlank(varImagemProduto.Anexo), Notify("Imagem não encontrada", NotificationType.Error),Set(varImagem,true) & Notify("Carregando", NotificationType.Information))
+            TemplateFill: =
+            TemplatePadding: =0
+            TemplateSize: =If(Title5_1.Height + Subtitle5_1.Height + Body3_1.Height + 45 < 126, 153, Title5_1.Height + Subtitle5_1.Height + Body3_1.Height + 45)
+            Y: =285
+            ZIndex: =1
+
+            Title5_1 As label:
+                Color: =varCorLetra
+                Font: =varFonte
+                FontWeight: |-
+                    =If(
+                        ThisItem.IsSelected,
+                        FontWeight.Semibold,
+                        FontWeight.Normal
+                    )
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =15 + varLetra
+                Text: =ThisItem.Material.Value & " " & ThisItem.Cor.Value
+                VerticalAlign: =VerticalAlign.Top
+                Width: =530
+                X: =Title5.X
+                Y: =25
+                ZIndex: =1
+
+            Subtitle5_1 As label:
+                Color: =varCorLetra
+                Font: =varFonte
+                FontWeight: |-
+                    =If(
+                        ThisItem.IsSelected,
+                        FontWeight.Semibold,
+                        FontWeight.Normal
+                    )
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =15 + varLetra
+                Text: =ThisItem.Diâmetro & "mm"
+                VerticalAlign: =VerticalAlign.Top
+                Width: =Title5_1.Width
+                X: =Title5_1.X
+                Y: =Title5_1.Y + Title5_1.Height
+                ZIndex: =2
+
+            Body3_1 As label:
+                Color: =varCorLetra
+                Font: =varFonte
+                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                Height: =Self.Size * 1.8
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =15 + varLetra
+                Text: |-
+                    ="Estoque: " & ThisItem.'Quant.'
+                VerticalAlign: =VerticalAlign.Top
+                Width: =Title5_1.Width
+                X: =Title5_1.X
+                Y: =Subtitle5_1.Y + Subtitle5_1.Height
+                ZIndex: =3
+
+            NextArrow5_1 As icon.ChevronRight:
+                AccessibleLabel: =Self.Tooltip
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Color: |-
+                    =Switch(
+                        varCor,
+                        Color.Yellow,
+                        ColorValue("#3b89bd"),
+                        Color.Black,
+                        Color.White,
+                        Color.White,
+                        ColorValue("#f8e458"),
+                        Color.White
+                    )
+                Height: =100
+                HoverColor: |-
+                    =Switch(
+                        varCor,
+                        Color.Yellow,
+                        ColorFade(
+                            ColorValue("#3b89bd"),
+                            50%
+                        ),
+                        Color.Black,
+                        ColorFade(
+                            Color.Black,
+                            50%
+                        ),
+                        Color.White,
+                        ColorFade(
+                            ColorValue("#f8e458"),
+                            50%
+                        ),
+                        ColorFade(
+                            Color.Black,
+                            50%
+                        )
+                    )
+                Icon: =Icon.ChevronRight
+                OnSelect: |
+                    =Set(varProduto, Gallery2_1.Selected) & Navigate('Localizar 2', ScreenTransition.Cover)
+                PaddingBottom: =16
+                PaddingLeft: =16
+                PaddingRight: =16
+                PaddingTop: =16
+                Tooltip: ="Exibir detalhes do item"
+                Width: =100
+                X: =Parent.TemplateWidth - Self.Width - 12
+                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                ZIndex: =4
+
+            Separator5_1 As rectangle:
+                Fill: |-
+                    =Switch(varCor,Color.Yellow,ColorValue("#3b89bd"),Color.Black,Color.White,Color.White,ColorValue("#f8e458"),Color.White)
+                Height: =8
+                OnSelect: =Select(Parent)
+                Width: =Parent.TemplateWidth
+                Y: =Gallery2_1.TemplateHeight
+                ZIndex: =5
+
+        TextSearchBox1_2 As text:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =
+            Default: =""
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            EnableSpellCheck: =true
+            Fill: |-
+                =Switch(varCor,Color.Yellow,ColorFade(ColorValue("#3b89bd"),50%),Color.Black,ColorFade(Color.White,50%),Color.White,ColorFade(ColorValue("#f8e458"),50%),ColorFade(Color.Black,50%))
+            Font: =varFonte
+            Height: =75
+            HintText: ="Encontrar item"
+            HoverBorderColor: =RGBA(149, 149, 149, 1)
+            HoverColor: =Self.Color
+            HoverFill: =
+            OnChange: =Reset(Gallery2_1)
+            OnSelect: =Reset(Gallery2_1)
+            PaddingLeft: =70
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =30 + varLetra
+            Width: =640
+            Y: =210
+            ZIndex: =2
+
+        Icon3 As icon.FilterFlat:
+            Color: |-
+                =Switch(
+                    varCor,
+                    Color.Yellow,
+                    ColorValue("#fdee2f"),
+                    Color.Black,
+                    Color.Black,
+                    Color.White,
+                    Color.Black,
+                    Color.Black
+                )
+            Icon: =Icon.FilterFlat
+            OnSelect: |-
+                =UpdateContext({varFiltro: true});
+                Reset(Gallery2_1)
+            Visible: =If(varFiltro = false, true, true)
+            X: =564
+            Y: =220
+            ZIndex: =7
+
+        Filtro_2 As groupContainer:
+            Fill: |-
+                =Switch(
+                    varCor,
+                    Color.Yellow,
+                    ColorFade(
+                        ColorValue("#3b89bd"),
+                        50%
+                    ),
+                    Color.Black,
+                    ColorFade(
+                        Color.White,
+                        50%
+                    ),
+                    Color.White,
+                    ColorFade(
+                        ColorValue("#f8e458"),
+                        50%
+                    ),
+                    ColorFade(
+                        Color.Black,
+                        50%
+                    )
+                )
+            Height: =800
+            Visible: =varFiltro
+            Width: =290 + Radio1_4.Size
+            X: =350 - Radio1_4.Size
+            Y: =210
+            ZIndex: =8
+
+            Radio1_4 As radio:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.None
+                Color: =Color.Black
+                Font: =varFonte
+                Height: =360
+                HoverColor: =ColorFade(Self.Color,30%)
+                Items: =Choices('Estoque 3D'.Material)
+                OnSelect: =Reset(Gallery2)
+                RadioBorderColor: =Switch(varCor,Color.Yellow,varCorBTT,Color.Black,Color.Black,Color.White,Color.Black,Color.Black)
+                RadioSelectionFill: =Switch(varCor,Color.Yellow,varCorBTT,Color.Black,Color.Black,Color.White,Color.Black,Color.Black)
+                Size: =15 + varLetra
+                Width: =310
+                Y: =75
+                ZIndex: =3
+
+            Radio1_5 As radio:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderStyle: =BorderStyle.None
+                Color: =Color.Black
+                Font: =varFonte
+                Height: =340
+                HoverColor: =ColorFade(Self.Color,30%)
+                Items: =Choices('Estoque 3D'.Cor)
+                OnSelect: =Reset(Gallery2)
+                RadioBorderColor: =Switch(varCor,Color.Yellow,varCorBTT,Color.Black,Color.Black,Color.White,Color.Black,Color.Black)
+                RadioSelectionFill: =Switch(varCor,Color.Yellow,varCorBTT,Color.Black,Color.Black,Color.White,Color.Black,Color.Black)
+                Size: =15 + varLetra
+                Width: =310
+                Y: =460
+                ZIndex: =4
+
+        Icon3_1 As icon.FilterFlat:
+            Color: |-
+                =Switch(varCor,Color.Yellow,ColorValue("#fdee2f"),Color.Black,Color.Black,Color.White,Color.Black,Color.Black)
+            Icon: =Icon.Cancel
+            OnSelect: |-
+                =UpdateContext({varFiltro:false}) //& Reset(Radio1);;Reset(Radio2)
+            Visible: =If(varFiltro = true, true, false)
+            X: =565
+            Y: =220
+            ZIndex: =9
+
+        Icon6 As icon.Reset:
+            Color: |-
+                =Switch(varCor,Color.Yellow,ColorValue("#fdee2f"),Color.Black,Color.Black,Color.White,Color.Black,Color.Black)
+            Icon: =Icon.Reset
+            OnSelect: =Reset(Radio1_4) & Reset(Radio1_5) & Reset(Gallery2_1)
+            Visible: =If(varFiltro = true, true, false)
+            X: =340
+            Y: =220
+            ZIndex: =10
+

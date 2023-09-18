@@ -1,0 +1,79 @@
+{
+  "a04bc8d5-7d32-429a-80e1-2e2d32cf0e14": {
+    "appActions": [
+      "SendEmailV2"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1649/1.0.1649.3368/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Outlook"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "a04bc8d5-7d32-429a-80e1-2e2d32cf0e14"
+  },
+  "bf84baff-6f4c-4c1f-bd23-9ab7c11d374f": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/shgogna/globalperconnector-train1/1.0.1639.3312/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://grouperenault.sharepoint.com/sites/Remanejo": {
+        "dataSources": {
+          "CONTROLEDEMATERIAIS": {
+            "tableName": "5c38fe97-1ad8-4095-b4fd-c2e2a64632ca"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "CONTROLEDEMATERIAIS"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "bf84baff-6f4c-4c1f-bd23-9ab7c11d374f"
+  },
+  "f31a593b-f385-4786-97a0-836f3962e255": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/shgogna/globalperconnector-train1/1.0.1639.3312/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://grouperenault.sharepoint.com/sites/Impresso3DLATAM": {
+        "dataSources": {
+          "Estoque 3D": {
+            "tableName": "b170e38b-bbce-4269-bdc3-94b9af885401"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Estoque 3D"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "f31a593b-f385-4786-97a0-836f3962e255"
+  }
+}
