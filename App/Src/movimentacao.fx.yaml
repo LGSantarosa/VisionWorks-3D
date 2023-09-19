@@ -270,7 +270,6 @@ movimentacao As screen:
                 OnSelect: =Reset(Gallery2)
                 RadioBorderColor: =Switch(varCor,Color.Yellow,varCorBTT,Color.Black,Color.Black,Color.White,Color.Black,Color.Black)
                 RadioSelectionFill: =Switch(varCor,Color.Yellow,varCorBTT,Color.Black,Color.Black,Color.White,Color.Black,Color.Black)
-                Reset: =true
                 Size: =15 + varLetra
                 Width: =310
                 Y: =74
