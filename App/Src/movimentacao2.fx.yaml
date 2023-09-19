@@ -189,13 +189,11 @@ movimentacao2 As screen:
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
-            Update: |-
-                =If(varCopia = true, Value(DataCardValue16.Text),
-                If(
+            Update: |
+                =If(
                     DataCardValue9.Selected.Value = "Saída",
                     Value(varProduto.'Quant.') - Value(DataCardValue16.Text),
                     Value(varProduto.'Quant.') + Value(DataCardValue16.Text)
-                )
                 )
             Width: =640
             X: =0
@@ -1989,7 +1987,7 @@ movimentacao2 As screen:
                             "Dados Inválidos",
                             NotificationType.Error
                         ),
-                        SubmitForm(Form1) && SubmitForm(Form3);
+                        SubmitForm(Form1) & SubmitForm(Form3);
                         Notify(
                             "Entrada registrada com sucesso",
                             NotificationType.Success
@@ -2029,7 +2027,7 @@ movimentacao2 As screen:
                             "Dados inválidos",
                             NotificationType.Error
                         ),
-                        SubmitForm(Form1) && SubmitForm(Form3);
+                        SubmitForm(Form1) & SubmitForm(Form3);
                         Notify(
                             "Saída registrada com sucesso",
                             NotificationType.Success
