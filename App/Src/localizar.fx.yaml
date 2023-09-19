@@ -104,7 +104,7 @@ localizar As screen:
                         TextSearchBox1_2.Text
                     ),
                     (Material.Value = Radio1_4.Selected.Value Or Radio1_4.Selected.Value = Blank()),
-                    (Cor.Value = Radio1_5.Selected.Value Or Radio1_5.Selected.Value = Blank())
+                    (Diâmetro.Value = Radio1_5.Selected.Value Or Radio1_5.Selected.Value = Blank())
                 )
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
@@ -154,7 +154,7 @@ localizar As screen:
                 PaddingRight: =0
                 PaddingTop: =0
                 Size: =15 + varLetra
-                Text: =ThisItem.Diâmetro & "mm"
+                Text: =ThisItem.Diâmetro.Value & "mm"
                 VerticalAlign: =VerticalAlign.Top
                 Width: =Title5_1.Width
                 X: =Title5_1.X
@@ -323,7 +323,7 @@ localizar As screen:
                 BorderStyle: =BorderStyle.None
                 Color: =Color.Black
                 Font: =varFonte
-                Height: =360
+                Height: =565
                 HoverColor: =ColorFade(Self.Color,30%)
                 Items: =Choices('Estoque 3D'.Material)
                 OnSelect: =Reset(Gallery2)
@@ -339,15 +339,15 @@ localizar As screen:
                 BorderStyle: =BorderStyle.None
                 Color: =Color.Black
                 Font: =varFonte
-                Height: =340
+                Height: =160
                 HoverColor: =ColorFade(Self.Color,30%)
-                Items: =Choices('Estoque 3D'.Cor)
+                Items: =Choices('Estoque 3D'.Diâmetro)
                 OnSelect: =Reset(Gallery2)
                 RadioBorderColor: =Switch(varCor,Color.Yellow,varCorBTT,Color.Black,Color.Black,Color.White,Color.Black,Color.Black)
                 RadioSelectionFill: =Switch(varCor,Color.Yellow,varCorBTT,Color.Black,Color.Black,Color.White,Color.Black,Color.Black)
                 Size: =15 + varLetra
                 Width: =310
-                Y: =460
+                Y: =640
                 ZIndex: =4
 
         Icon3_1 As icon.FilterFlat:
