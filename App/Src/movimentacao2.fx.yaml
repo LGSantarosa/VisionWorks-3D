@@ -1173,6 +1173,7 @@ movimentacao2 As screen:
 
     Form3 As form:
         DataSource: =CONTROLEDEMATERIAIS3D
+        DefaultMode: =FormMode.New
         Height: =559
         Visible: =false
         Width: =640
