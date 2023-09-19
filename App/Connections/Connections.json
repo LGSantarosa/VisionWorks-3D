@@ -41,7 +41,8 @@
       }
     },
     "dataSources": [
-      "CONTROLEDEMATERIAIS"
+      "CONTROLEDEMATERIAIS",
+      "Estoque 3D"
     ],
     "dependencies": {},
     "dependents": [],
