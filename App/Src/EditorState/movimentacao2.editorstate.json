@@ -1252,8 +1252,8 @@
         },
         {
           "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": true,
-          "AutoRuleBindingString": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "ThisItem.Data",
           "InvariantPropertyName": "Default",
           "IsLockable": true,
           "NameMapSourceSchema": "?"

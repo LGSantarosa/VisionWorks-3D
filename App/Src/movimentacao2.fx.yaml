@@ -1092,7 +1092,7 @@ movimentacao2 As screen:
         Data_DataCard2 As typedDataCard.dateEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="Data"
-            Default: =ThisItem.Data
+            Default: =Now()
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@CONTROLEDEMATERIAIS3D],DataSourceInfo.DisplayName,"Data")
             Fill: =RGBA(0, 0, 0, 0)
