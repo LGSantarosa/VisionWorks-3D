@@ -723,6 +723,7 @@ movimentacao2 As screen:
                 DefaultSelectedItems: =Parent.Default
                 DisplayFields: =["Value"]
                 DisplayMode: =Parent.DisplayMode
+                Font: =varFonte
                 Height: =70
                 HoverFill: =varCorHover
                 Items: =Choices([@'Estoque 3D'].Di_x00e2_metro)
@@ -754,7 +755,7 @@ movimentacao2 As screen:
                 SearchItems: =Choices('Estoque 3D'.Di_x00e2_metro,DataCardValue27.SearchText)
                 SelectionFill: =varCorHover
                 SelectMultiple: =false
-                Size: =21
+                Size: =21 + varLetra
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 X: =30
