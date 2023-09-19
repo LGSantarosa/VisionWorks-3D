@@ -267,6 +267,7 @@ movimentacao As screen:
                 Height: =569
                 HoverColor: =ColorFade(Self.Color,30%)
                 Items: =Choices('Estoque 3D'.Material)
+                OnChange: =
                 OnSelect: =Reset(Gallery2)
                 RadioBorderColor: =Switch(varCor,Color.Yellow,varCorBTT,Color.Black,Color.Black,Color.White,Color.Black,Color.Black)
                 RadioSelectionFill: =Switch(varCor,Color.Yellow,varCorBTT,Color.Black,Color.Black,Color.White,Color.Black,Color.Black)
