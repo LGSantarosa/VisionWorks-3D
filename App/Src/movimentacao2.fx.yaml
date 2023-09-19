@@ -1178,7 +1178,7 @@ movimentacao2 As screen:
             BorderColor: =RGBA(0, 0, 0, 1)
             BorderStyle: =BorderStyle.Solid
             DataField: ="Nome"
-            Default: =ThisItem.Nome
+            Default: =
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@CONTROLEDEMATERIAIS3D],DataSourceInfo.DisplayName,"Nome")
             Fill: =RGBA(0, 0, 0, 0)
