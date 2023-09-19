@@ -1075,19 +1075,19 @@ movimentacao2 As screen:
                             Office365Outlook.SendEmailV2(
                                 "luiz.santarosa-extern@renault.com",
                                 "Estoque: " & varMatSoma,
-                                "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & "Mínimo 5"
+                                "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & " Mínimo 5"
                             ) &&
                 
                             Office365Outlook.SendEmailV2(
                                 "murillo.azevedo-extern@renault.com",
                                 "Estoque: " & varMatSoma,
-                                "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & "Mínimo 5"
+                                "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & " Mínimo 5"
                             ) &&
                 
                             Office365Outlook.SendEmailV2(
                                 "bruna.cardoso@renault.com",
                                 "Estoque: " & varMat,
-                                "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & "Mínimo 5"
+                                "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & " Mínimo 5"
                             )
                         );
                         Navigate(principal) & Reset(TextSearchBox1_1) & Refresh('Estoque 3D') & ResetForm(Form1) & Reset(Radio1_2) & Reset(Radio1_3) & UpdateContext({varFiltro: false}) & Set(
@@ -1115,19 +1115,19 @@ movimentacao2 As screen:
                             Office365Outlook.SendEmailV2(
                                 "luiz.santarosa-extern@renault.com",
                                 "Estoque: " & varMat,
-                                "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & "Mínimo 5"
+                                "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & " Mínimo 5"
                             ) &&
                 
                             Office365Outlook.SendEmailV2(
                                 "murillo.azevedo-extern@renault.com",
                                 "Estoque: " & varMat,
-                                "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & "Mínimo 5"
+                                "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & " Mínimo 5"
                             ) &&
                 
                             Office365Outlook.SendEmailV2(
                                 "bruna.cardoso@renault.com",
                                 "Estoque: " & varMat,
-                                "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & "Mínimo 5"
+                                "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & " Mínimo 5"
                             )
                         );
                         Navigate(principal) & Reset(TextSearchBox1_1) & Refresh('Estoque 3D') & ResetForm(Form1) & Reset(Radio1_2) & Reset(Radio1_3) & UpdateContext({varFiltro: false}) & Set(
