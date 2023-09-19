@@ -574,7 +574,7 @@ movimentacao2 As screen:
         Diâmetro_DataCard1 As typedDataCard.numberEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="Di_x00e2_metro"
-            Default: =ThisItem.Diâmetro
+            Default: =ThisItem.Diâmetro.Value
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@'Estoque 3D'],DataSourceInfo.DisplayName,"Di_x00e2_metro")
             Fill: =RGBA(0, 0, 0, 0)
@@ -608,7 +608,7 @@ movimentacao2 As screen:
                         Form1.Mode = FormMode.New,
                         DisplayMode.Edit,
                         If(
-                            varProduto.Diâmetro = Blank(),
+                            varProduto.Diâmetro.Value = Blank(),
                             DisplayMode.Edit,
                             DisplayMode.Disabled
                         )

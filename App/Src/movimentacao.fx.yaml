@@ -173,24 +173,6 @@ movimentacao As screen:
                 Y: =Gallery2.TemplateHeight
                 ZIndex: =5
 
-            Icon2 As icon.Copy:
-                Color: |-
-                    =Switch(varCor,Color.Yellow,ColorValue("#3b89bd"),Color.Black,Color.White,Color.White,ColorValue("#f8e458"),Color.White)
-                Height: =100
-                HoverColor: |-
-                    =Switch(varCor,Color.Yellow,ColorFade(ColorValue("#3b89bd"),50%),Color.Black,ColorFade(Color.Black,50%),Color.White,ColorFade(ColorValue("#f8e458"),50%),ColorFade(Color.Black,50%))
-                Icon: =Icon.Copy
-                OnSelect: |
-                    =Set(varProduto, Gallery2.Selected) & NewForm(Form1) & Set(varCopia,true) & Navigate(movimentacao2, ScreenTransition.Cover) & Set(varVoltar,false) & Notify("Dados copiados",NotificationType.Information)
-                PaddingBottom: =16
-                PaddingLeft: =16
-                PaddingRight: =16
-                PaddingTop: =16
-                Width: =100
-                X: =425
-                Y: =25
-                ZIndex: =6
-
         TextSearchBox1_1 As text:
             BorderColor: =RGBA(0, 0, 0, 1)
             Color: =
