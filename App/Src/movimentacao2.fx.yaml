@@ -1185,10 +1185,7 @@ movimentacao2 As screen:
                     ) & Set(
                         varVoltar,
                         false
-                    ) & Set(
-                        varCopia,
-                        false
-                    )
+                )
                 )
             Width: =75
             X: =25
