@@ -465,7 +465,7 @@ movimentacao2 As screen:
             Height: =50
             MaxLength: =DataSourceInfo([@CONTROLEDEMATERIAIS3D], DataSourceInfo.MaxLength, "Nome")
             Required: =false
-            Update: =DataCardValue18.Text
+            Update: =DataCardValue12.Text
             Width: =640
             X: =0
             Y: =6
