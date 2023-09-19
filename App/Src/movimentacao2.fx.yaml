@@ -27,7 +27,7 @@ movimentacao2 As screen:
             DataField: ="Localiza_x00e7__x00e3_o"
             Default: =varProduto.Localização
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@CONTROLEDEMATERIAIS3D],DataSourceInfo.DisplayName,"Localiza_x00e7__x00e3_o")
+            DisplayName: =DataSourceInfo([@'Estoque 3D'],DataSourceInfo.DisplayName,"Localiza_x00e7__x00e3_o")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
