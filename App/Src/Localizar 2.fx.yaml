@@ -170,7 +170,7 @@
         Diâmetro_DataCard2 As typedDataCard.numberEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="Di_x00e2_metro"
-            Default: =varProduto.Diâmetro
+            Default: =varProduto.Diâmetro.Value
             DisplayMode: =DisplayMode.Disabled
             DisplayName: =DataSourceInfo([@'Estoque 3D'],DataSourceInfo.DisplayName,"Di_x00e2_metro")
             Fill: =RGBA(0, 0, 0, 0)
