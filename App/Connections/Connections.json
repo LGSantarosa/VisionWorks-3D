@@ -1,4 +1,26 @@
 {
+  "29160c1c-c638-49aa-99a0-b9205274a906": {
+    "connectionRef": {
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1654/1.0.1654.3414/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline"
+    },
+    "datasets": {
+      "https://grouperenault.sharepoint.com/sites/Remanejo": {
+        "dataSources": {
+          "CONTROLEDEMATERIAIS": {
+            "tableName": "5c38fe97-1ad8-4095-b4fd-c2e2a64632ca"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "CONTROLEDEMATERIAIS"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "29160c1c-c638-49aa-99a0-b9205274a906"
+  },
   "a04bc8d5-7d32-429a-80e1-2e2d32cf0e14": {
     "appActions": [
       "SendEmailV2"

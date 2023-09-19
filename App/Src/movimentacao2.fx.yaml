@@ -1049,7 +1049,7 @@ movimentacao2 As screen:
                     ) & Set(
                         varMatSoma,
                         varProduto.'Quant.' + Value(DataCardValue16.Text)
-                    );
+                    )
                 PaddingLeft: =5
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
@@ -1692,7 +1692,7 @@ movimentacao2 As screen:
             DisplayName: =DataSourceInfo([@'Estoque 3D'],DataSourceInfo.DisplayName,"Title")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
-            MaxLength: =DataSourceInfo([@'Estoque 3D'], DataSourceInfo.MaxLength, "Title")
+            MaxLength: =DataSourceInfo([@CONTROLEDEMATERIAIS3D], DataSourceInfo.MaxLength, "Title")
             Required: =false
             Update: =DataCardValue11.Text
             Width: =640
@@ -1784,14 +1784,14 @@ movimentacao2 As screen:
 
         Status_DataCard2 As typedDataCard.comboBoxEditCard:
             BorderStyle: =BorderStyle.Solid
-            DataField: ="Status"
+            DataField: ="field_0"
             Default: =
             DisplayMode: =Parent.DisplayMode
             DisplayName: |-
                 =DataSourceInfo(
-                    [@CONTROLEDEMATERIAIS3D],
+                    [@CONTROLEDEMATERIAIS],
                     DataSourceInfo.DisplayName,
-                    "Status"
+                    "field_0"
                 )
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
@@ -1821,7 +1821,7 @@ movimentacao2 As screen:
                     =Switch(varCor,Color.Yellow,ColorValue("#3b89bd"),Color.Black,Color.Black,Color.White,ColorValue("#f8e458"),Color.Black)
                 ChevronHoverBackground: |-
                     =Switch(varCor,Color.Yellow,ColorFade(ColorValue("#3b89bd"),50%),Color.Black,ColorFade(Color.Black,50%),Color.White,ColorFade(ColorValue("#f8e458"),50%),ColorFade(Color.Black,50%))
-                DefaultSelectedItems: =//If(DataCardValue17.Selected.Value <> varProduto.Localização.Value;["Saída"];Blank())
+                DefaultSelectedItems: =
                 DisplayFields: =["Value"]
                 DisplayMode: =Parent.DisplayMode
                 Font: =varFonte
@@ -1830,7 +1830,7 @@ movimentacao2 As screen:
                 HoverFill: =varCorHover
                 InputTextPlaceholder: ="Tipo de movimentação"
                 IsSearchable: =false
-                Items: =Choices([@CONTROLEDEMATERIAIS3D].Status)
+                Items: =Choices([@CONTROLEDEMATERIAIS].Status)
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedBorderColor: =Color.Black
                 PressedColor: =Color.White
@@ -2024,7 +2024,7 @@ movimentacao2 As screen:
                                 "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & " Mínimo 5"
                             )
                         );
-                        Navigate(principal) & Reset(TextSearchBox1_1) & Refresh('Estoque 3D') & ResetForm(Form1) & ResetForm(Form3) & Reset(Radio1_2) & Reset(Radio1_3) & UpdateContext({varFiltro: false}) & Set(
+                        Navigate(principal) & Reset(TextSearchBox1_1) & Refresh('Estoque 3D') & Refresh(CONTROLEDEMATERIAIS3D) & ResetForm(Form1) & ResetForm(Form3) & Reset(Radio1_2) & Reset(Radio1_3) & UpdateContext({varFiltro: false}) & Set(
                             varCorLetra,
                             Color.Black
                         )

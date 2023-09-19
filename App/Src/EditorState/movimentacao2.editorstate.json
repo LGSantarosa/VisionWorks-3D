@@ -14003,8 +14003,8 @@
       "ControlPropertyState": [
         {
           "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "Choices([@CONTROLEDEMATERIAIS].Status)",
+          "AutoRuleBindingEnabled": true,
+          "AutoRuleBindingString": "",
           "InvariantPropertyName": "Items",
           "IsLockable": true,
           "NameMapSourceSchema": "?"
@@ -30497,8 +30497,8 @@
       "ControlPropertyState": [
         {
           "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "\"field_0\"",
+          "AutoRuleBindingEnabled": true,
+          "AutoRuleBindingString": "",
           "InvariantPropertyName": "DataField",
           "IsLockable": true,
           "NameMapSourceSchema": "?"
