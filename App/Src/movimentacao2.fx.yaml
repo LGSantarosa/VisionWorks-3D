@@ -1539,7 +1539,7 @@ movimentacao2 As screen:
                 Font: =varFonte
                 Height: =70
                 HoverFill: =varCorHover
-                Items: =Choices([@'Estoque 3D'].Di_x00e2_metro)
+                Items: =Choices([@'Estoque 3D'].Diâmetro)
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedFill: |-
                     =Switch(
@@ -1565,7 +1565,7 @@ movimentacao2 As screen:
                         )
                     )
                 SearchFields: =["Value"]
-                SearchItems: =Choices('Estoque 3D'.Di_x00e2_metro,DataCardValue27.SearchText)
+                SearchItems: =Choices('Estoque 3D'.Diâmetro,DataCardValue27.SearchText)
                 SelectionFill: =varCorHover
                 SelectMultiple: =false
                 Size: =21 + varLetra
