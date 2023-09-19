@@ -1175,17 +1175,17 @@ movimentacao2 As screen:
                     Navigate(
                         movimentacao,
                         ScreenTransition.CoverRight
-                    ) & ResetForm(Form1) & Set(
+                    ) & Set(
                         varProduto,
                         Blank()
-                    ) & Reset(TextSearchBox1_1) & Refresh(CONTROLEDEMATERIAIS) & Reset(Radio1_2) & Reset(TextSearchBox1_2) & Reset(Radio1_3),
+                    ),
                     Navigate(
                         'Localizar 2',
                         ScreenTransition.CoverRight
                     ) & Set(
                         varVoltar,
                         false
-                    ) & ResetForm(Form1) & Set(
+                    ) & Set(
                         varCopia,
                         false
                     )
