@@ -1209,6 +1209,7 @@ movimentacao2 As screen:
                 Default: =Parent.Default
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
+                Font: =varFonte
                 Height: =70
                 HoverBorderColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =varCorHover
@@ -1218,7 +1219,7 @@ movimentacao2 As screen:
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
-                Size: =21
+                Size: =21 + varLetra
                 Tooltip: =Parent.DisplayName
                 Width: =Parent.Width - 60
                 X: =30
