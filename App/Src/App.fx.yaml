@@ -34,7 +34,7 @@ App As appinfo:
         );
         Set(
             varBusca,
-            CONTROLEDEMATERIAIS.Fabricante
+            CONTROLEDEMATERIAIS3D.Fabricante
         )
     StartScreen: =login
     Theme: =PowerAppsTheme

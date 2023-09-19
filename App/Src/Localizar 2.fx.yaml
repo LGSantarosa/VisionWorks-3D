@@ -244,15 +244,10 @@
 
         "'Quant._DataCard1' As typedDataCard.numberEditCard":
             BorderStyle: =BorderStyle.Solid
-            DataField: ="field_9"
+            DataField: ="Quant_x002e_"
             Default: =varProduto.'Quant.'
             DisplayMode: =Parent.DisplayMode
-            DisplayName: |-
-                =DataSourceInfo(
-                    [@CONTROLEDEMATERIAIS],
-                    DataSourceInfo.DisplayName,
-                    "field_9"
-                )
+            DisplayName: =DataSourceInfo([@'Estoque 3D'],DataSourceInfo.DisplayName,"Quant_x002e_")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -327,10 +322,10 @@
 
         Localização_DataCard2 As typedDataCard.comboBoxEditCard:
             BorderStyle: =BorderStyle.Solid
-            DataField: ="field_11"
+            DataField: ="Localiza_x00e7__x00e3_o"
             Default: =varProduto.Localização
             DisplayMode: =DisplayMode.Disabled
-            DisplayName: =DataSourceInfo([@CONTROLEDEMATERIAIS],DataSourceInfo.DisplayName,"field_11")
+            DisplayName: =DataSourceInfo([@'Estoque 3D'],DataSourceInfo.DisplayName,"Localiza_x00e7__x00e3_o")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -386,7 +381,7 @@
                 Font: =varFonte
                 Height: =70
                 IsSearchable: =false
-                Items: =Choices([@CONTROLEDEMATERIAIS].Localização)
+                Items: =Choices([@CONTROLEDEMATERIAIS3D].Localização)
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 SearchFields: =["Value"]
                 SearchItems: =[]
@@ -427,22 +422,22 @@
 
         Fabricante_DataCard3 As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
-            DataField: ="field_5"
+            DataField: ="Fabricante"
             Default: =varProduto.Fabricante
             DisplayMode: =Parent.DisplayMode
             DisplayName: |-
                 =DataSourceInfo(
-                    [@CONTROLEDEMATERIAIS],
+                    [@'Estoque 3D'],
                     DataSourceInfo.DisplayName,
-                    "field_5"
+                    "Fabricante"
                 )
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             MaxLength: |-
                 =DataSourceInfo(
-                    [@CONTROLEDEMATERIAIS],
+                    [@CONTROLEDEMATERIAIS3D],
                     DataSourceInfo.MaxLength,
-                    "field_5"
+                    "Fabricante"
                 )
             Required: =false
             Update: =DataCardValue22.Text
