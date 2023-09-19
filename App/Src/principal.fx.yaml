@@ -531,18 +531,7 @@ principal As screen:
     "'Tooling Logo' As image":
         BorderColor: =RGBA(0, 0, 0, 1)
         Image: ='Logo Tooling - vetor'
-        OnSelect: |-
-            =/*Navigate(login);;
-            
-            If( varCor = Color.Yellow; Set(varCor;Color.Yellow) & Set(varCorBTT;ColorValue("#3b89bd")) & Set(varCorHover;ColorFade(ColorValue("#3b89bd");50%)) & Set(varEstoqueLogo;'MicrosoftTeams-image (2)') & Set(varCorLetra;Color.White);
-            
-                If( varCor = Color.White; Set(varCor;Color.White) & Set(varCorBTT;Color.Black) & Set(varCorHover;               ColorFade(Color.Black;50%));
-                
-                    If( varCor = Color.Black; Set(varCor;Color.Black) & Set(varCorBTT;Color.White) & Set(varCorHover;               ColorFade(Color.Black;50%))
-            
-                    )
-                )
-            )*/
+        OnSelect: =
         Width: =490
         X: =75
         Y: =1000

@@ -19,6 +19,28 @@
     "dependents": [],
     "id": "a04bc8d5-7d32-429a-80e1-2e2d32cf0e14"
   },
+  "a55f400e-d891-4f8f-b32d-4df06d328f89": {
+    "connectionRef": {
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1654/1.0.1654.3414/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline"
+    },
+    "datasets": {
+      "https://grouperenault.sharepoint.com/sites/Impresso3DLATAM": {
+        "dataSources": {
+          "CONTROLEDEMATERIAIS3D": {
+            "tableName": "e7ce2311-1fcd-4fd4-8289-9101296e49dc"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "CONTROLEDEMATERIAIS3D"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "a55f400e-d891-4f8f-b32d-4df06d328f89"
+  },
   "bf84baff-6f4c-4c1f-bd23-9ab7c11d374f": {
     "appActions": [
       "providers/PowerPlatform.Governance/Operations/Read"
@@ -31,17 +53,8 @@
       "parameterHints": {},
       "parameterHintsV2": {}
     },
-    "datasets": {
-      "https://grouperenault.sharepoint.com/sites/Remanejo": {
-        "dataSources": {
-          "CONTROLEDEMATERIAIS": {
-            "tableName": "5c38fe97-1ad8-4095-b4fd-c2e2a64632ca"
-          }
-        }
-      }
-    },
+    "datasets": {},
     "dataSources": [
-      "CONTROLEDEMATERIAIS",
       "Estoque 3D"
     ],
     "dependencies": {},
