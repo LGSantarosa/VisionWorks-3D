@@ -2016,7 +2016,7 @@ movimentacao2 As screen:
                                 "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & " Mínimo 5"
                             )
                         );
-                        Navigate(principal) & Reset(TextSearchBox1_1) & Refresh('Estoque 3D') & ResetForm(Form1) & Reset(Radio1_2) & Reset(Radio1_3) & UpdateContext({varFiltro: false}) & Set(
+                        Navigate(principal) & Reset(TextSearchBox1_1) & Refresh('Estoque 3D') & ResetForm(Form1) & ResetForm(Form3) & Reset(Radio1_2) & Reset(Radio1_3) & UpdateContext({varFiltro: false}) & Set(
                             varCorLetra,
                             Color.Black
                         )
@@ -2056,7 +2056,7 @@ movimentacao2 As screen:
                                 "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & " Mínimo 5"
                             )
                         );
-                        Navigate(principal) & Reset(TextSearchBox1_1) & Refresh('Estoque 3D') & ResetForm(Form1) & Reset(Radio1_2) & Reset(Radio1_3) & UpdateContext({varFiltro: false}) & Set(
+                        Navigate(principal) & Reset(TextSearchBox1_1) & Refresh('Estoque 3D') & ResetForm(Form1) & ResetForm(Form3) & Reset(Radio1_2) & Reset(Radio1_3) & UpdateContext({varFiltro: false}) & Set(
                             varCorLetra,
                             Color.Black
                         )
