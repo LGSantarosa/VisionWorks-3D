@@ -282,7 +282,7 @@ movimentacao As screen:
                 Font: =varFonte
                 Height: =346
                 HoverColor: =ColorFade(Self.Color,30%)
-                Items: =Choices('Estoque 3D'.Cor)
+                Items: =Choices('Estoque 3D'.Diâmetro)
                 OnSelect: =Reset(Gallery2)
                 RadioBorderColor: =Switch(varCor,Color.Yellow,varCorBTT,Color.Black,Color.Black,Color.White,Color.Black,Color.Black)
                 RadioSelectionFill: =Switch(varCor,Color.Yellow,varCorBTT,Color.Black,Color.Black,Color.White,Color.Black,Color.Black)
