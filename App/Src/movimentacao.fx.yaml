@@ -58,7 +58,7 @@ movimentacao As screen:
                         TextSearchBox1_1.Text
                     ),
                     (Material.Value = Radio1_2.Selected.Value Or Radio1_2.Selected.Value = Blank()),
-                    (Cor.Value = Radio1_3.Selected.Value Or Radio1_3.Selected.Value = Blank())
+                    (Diâmetro.Value = Radio1_3.Selected.Value Or Radio1_3.Selected.Value = Blank())
                 )
             Layout: =Layout.Vertical
             LoadingSpinner: =LoadingSpinner.Data
@@ -102,7 +102,7 @@ movimentacao As screen:
                 PaddingRight: =0
                 PaddingTop: =0
                 Size: =15 + varLetra
-                Text: =ThisItem.Diâmetro & "mm"
+                Text: =ThisItem.Diâmetro.Value & "mm"
                 VerticalAlign: =VerticalAlign.Top
                 Width: =Title5.Width
                 X: =Title5.X
@@ -264,12 +264,13 @@ movimentacao As screen:
                 BorderStyle: =BorderStyle.None
                 Color: =Color.Black
                 Font: =varFonte
-                Height: =359
+                Height: =569
                 HoverColor: =ColorFade(Self.Color,30%)
                 Items: =Choices('Estoque 3D'.Material)
                 OnSelect: =Reset(Gallery2)
                 RadioBorderColor: =Switch(varCor,Color.Yellow,varCorBTT,Color.Black,Color.Black,Color.White,Color.Black,Color.Black)
                 RadioSelectionFill: =Switch(varCor,Color.Yellow,varCorBTT,Color.Black,Color.Black,Color.White,Color.Black,Color.Black)
+                Reset: =true
                 Size: =15 + varLetra
                 Width: =310
                 Y: =74
@@ -280,7 +281,7 @@ movimentacao As screen:
                 BorderStyle: =BorderStyle.None
                 Color: =Color.Black
                 Font: =varFonte
-                Height: =346
+                Height: =162
                 HoverColor: =ColorFade(Self.Color,30%)
                 Items: =Choices('Estoque 3D'.Diâmetro)
                 OnSelect: =Reset(Gallery2)
@@ -288,7 +289,7 @@ movimentacao As screen:
                 RadioSelectionFill: =Switch(varCor,Color.Yellow,varCorBTT,Color.Black,Color.Black,Color.White,Color.Black,Color.Black)
                 Size: =15 + varLetra
                 Width: =310
-                Y: =460
+                Y: =643
                 ZIndex: =4
 
         Icon6_1 As icon.Reset:

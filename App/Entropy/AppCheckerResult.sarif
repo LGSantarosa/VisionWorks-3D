@@ -177,46 +177,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "movimentacao.Gallery2.Subtitle5.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "movimentacao.Gallery2.Subtitle5.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 9,
-                  "charOffset": 8,
-                  "snippet": {
-                    "text": ".Diâmetro"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "movimentacao",
-                "type": "movimentacao.Gallery2.Subtitle5"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Text, Number, Decimal, Date, Time, DateTimeNoTimeZone, DateTime, Boolean, OptionSetValue, ViewValue, UntypedObject"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrBadType-ExpectedTypesCSV",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "movimentacao2.Form1.Material_DataCard2.DataCardValue11.AccessibleLabel"
                 }
               ],
