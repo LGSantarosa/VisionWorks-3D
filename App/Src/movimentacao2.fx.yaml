@@ -1988,7 +1988,7 @@ movimentacao2 As screen:
                             "Dados Inválidos",
                             NotificationType.Error
                         ),
-                        SubmitForm(Form1);
+                        SubmitForm(Form1) & SubmitForm(Form3);
                         Notify(
                             "Entrada registrada com sucesso",
                             NotificationType.Success
@@ -2028,7 +2028,7 @@ movimentacao2 As screen:
                             "Dados inválidos",
                             NotificationType.Error
                         ),
-                        SubmitForm(Form1);
+                        SubmitForm(Form1) & SubmitForm(Form3);
                         Notify(
                             "Saída registrada com sucesso",
                             NotificationType.Success
