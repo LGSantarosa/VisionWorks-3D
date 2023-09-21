@@ -2070,7 +2070,7 @@ movimentacao2 As screen:
                     DataCardValue9.Selected.Value = "Entrada",
                     If(
                         DataCardValue17.Selected.Value = Blank() Or DataCardValue9.Selected.Value = Blank() Or 
-                        DataCardValue16.Text = "" Or DataCardValue11.Text = "",
+                        DataCardValue16.Text = "" Or DataCardValue11.Text = "" Or Value(DataCardValue16.Text) > varProduto.'Quant.',
                         Notify(
                             "Dados Inválidos",
                             NotificationType.Error
@@ -2110,7 +2110,7 @@ movimentacao2 As screen:
                     ),
                     If( 
                         DataCardValue17.Selected.Value = Blank() Or DataCardValue9.Selected.Value = Blank() Or 
-                        DataCardValue16.Text = "" Or DataCardValue11.Text = "" Or Value(DataCardValue16.Text) > varProduto.'Quant.' Or DataCardValue3.Selected.Value = Blank() Or DataCardValue2.Selected.Value = Blank(),
+                        DataCardValue16.Text = "" Or DataCardValue11.Text = "" Or Value(DataCardValue16.Text) > varProduto.'Quant.',
                         Notify(
                             "Dados inválidos",
                             NotificationType.Error
