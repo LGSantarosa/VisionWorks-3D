@@ -33,7 +33,7 @@ movimentacao2 As screen:
         Anexo_DataCard2 As typedDataCard.addLargePictureCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="Anexo"
-            Default: =ThisItem.Anexo
+            Default: =Image3.Image
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@CONTROLEDEMATERIAIS3D],DataSourceInfo.DisplayName,"Anexo")
             Fill: =RGBA(0, 0, 0, 0)
@@ -104,7 +104,7 @@ movimentacao2 As screen:
         Cor_DataCard2 As typedDataCard.comboBoxEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="Cor"
-            Default: =ThisItem.Cor
+            Default: =DataCardValue2.Selected
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@CONTROLEDEMATERIAIS3D],DataSourceInfo.DisplayName,"Cor")
             Fill: =RGBA(0, 0, 0, 0)
@@ -175,7 +175,7 @@ movimentacao2 As screen:
         Data_DataCard1 As typedDataCard.dateEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="Data"
-            Default: =ThisItem.Data
+            Default: =DataCardValue24.SelectedDate
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@CONTROLEDEMATERIAIS3D],DataSourceInfo.DisplayName,"Data")
             Fill: =RGBA(0, 0, 0, 0)
@@ -245,7 +245,7 @@ movimentacao2 As screen:
         Diâmetro_DataCard3 As typedDataCard.comboBoxEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="Di_x00e2_metro"
-            Default: =ThisItem.Diâmetro
+            Default: =DataCardValue27.Selected
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@CONTROLEDEMATERIAIS3D],DataSourceInfo.DisplayName,"Di_x00e2_metro")
             Fill: =RGBA(0, 0, 0, 0)
@@ -316,7 +316,7 @@ movimentacao2 As screen:
         Material_DataCard3 As typedDataCard.comboBoxEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="Material"
-            Default: =ThisItem.Material
+            Default: =DataCardValue3.Selected
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@CONTROLEDEMATERIAIS3D],DataSourceInfo.DisplayName,"Material")
             Fill: =RGBA(0, 0, 0, 0)
@@ -387,7 +387,7 @@ movimentacao2 As screen:
         Localização_DataCard3 As typedDataCard.comboBoxEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="Localiza_x00e7__x00e3_o"
-            Default: =ThisItem.Localização
+            Default: =DataCardValue17.Selected
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@CONTROLEDEMATERIAIS3D],DataSourceInfo.DisplayName,"Localiza_x00e7__x00e3_o")
             Fill: =RGBA(0, 0, 0, 0)
@@ -458,7 +458,7 @@ movimentacao2 As screen:
         Nome_DataCard1 As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="Nome"
-            Default: =ThisItem.Nome
+            Default: =DataCardValue12.Text
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@CONTROLEDEMATERIAIS3D],DataSourceInfo.DisplayName,"Nome")
             Fill: =RGBA(0, 0, 0, 0)
@@ -531,7 +531,7 @@ movimentacao2 As screen:
         "'Quant._DataCard3' As typedDataCard.numberEditCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="Quant_x002e_"
-            Default: =ThisItem.'Quant.'
+            Default: =Value(DataCardValue16.Text)
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@CONTROLEDEMATERIAIS3D],DataSourceInfo.DisplayName,"Quant_x002e_")
             Fill: =RGBA(0, 0, 0, 0)
@@ -603,7 +603,7 @@ movimentacao2 As screen:
         Status_DataCard1 As typedDataCard.comboBoxEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="Status"
-            Default: =ThisItem.Status
+            Default: =DataCardValue9.Selected
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@CONTROLEDEMATERIAIS3D],DataSourceInfo.DisplayName,"Status")
             Fill: =RGBA(0, 0, 0, 0)
@@ -674,7 +674,7 @@ movimentacao2 As screen:
         Título_DataCard1 As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="Title"
-            Default: =ThisItem.Título
+            Default: =DataCardValue11.Text
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@CONTROLEDEMATERIAIS3D],DataSourceInfo.DisplayName,"Title")
             Fill: =RGBA(0, 0, 0, 0)
@@ -747,7 +747,7 @@ movimentacao2 As screen:
         Fabricante_DataCard1 As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="Fabricante"
-            Default: =ThisItem.Fabricante
+            Default: =DataCardValue13.Text
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@CONTROLEDEMATERIAIS3D],DataSourceInfo.DisplayName,"Fabricante")
             Fill: =RGBA(0, 0, 0, 0)
@@ -2070,7 +2070,7 @@ movimentacao2 As screen:
                     DataCardValue9.Selected.Value = "Entrada",
                     If(
                         DataCardValue17.Selected.Value = Blank() Or DataCardValue9.Selected.Value = Blank() Or 
-                        DataCardValue16.Text = "" Or DataCardValue11.Text = "" Or Value(DataCardValue16.Text) > varProduto.'Quant.',
+                        DataCardValue16.Text = "" Or DataCardValue11.Text = "",
                         Notify(
                             "Dados Inválidos",
                             NotificationType.Error
