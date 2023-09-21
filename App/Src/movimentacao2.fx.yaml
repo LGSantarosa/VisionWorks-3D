@@ -1865,7 +1865,7 @@ movimentacao2 As screen:
             BorderStyle: =BorderStyle.Solid
             DataField: ="field_0"
             Default: =
-            DisplayMode: =Parent.DisplayMode
+            DisplayMode: =If(varNovo=true,DisplayMode.Disabled,DisplayMode.Edit)
             DisplayName: |-
                 =DataSourceInfo(
                     [@CONTROLEDEMATERIAIS],
@@ -1900,7 +1900,7 @@ movimentacao2 As screen:
                     =Switch(varCor,Color.Yellow,ColorValue("#3b89bd"),Color.Black,Color.Black,Color.White,ColorValue("#f8e458"),Color.Black)
                 ChevronHoverBackground: |-
                     =Switch(varCor,Color.Yellow,ColorFade(ColorValue("#3b89bd"),50%),Color.Black,ColorFade(Color.Black,50%),Color.White,ColorFade(ColorValue("#f8e458"),50%),ColorFade(Color.Black,50%))
-                DefaultSelectedItems: =
+                DefaultSelectedItems: =If(varNovo = true,Choices([@CONTROLEDEMATERIAIS].Status,"Entrada"), Blank())
                 DisplayFields: =["Value"]
                 DisplayMode: =Parent.DisplayMode
                 Font: =varFonte
@@ -2191,6 +2191,9 @@ movimentacao2 As screen:
                     ) & Set(
                         varProduto,
                         Blank()
+                    ) & Set(
+                        varNovo,
+                        false
                     ),
                     Navigate(
                         'Localizar 2',
@@ -2198,7 +2201,10 @@ movimentacao2 As screen:
                     ) & Set(
                         varVoltar,
                         false
-                )
+                    ) & Set(
+                        varNovo,
+                        false
+                    )
                 )
             Width: =75
             X: =25
