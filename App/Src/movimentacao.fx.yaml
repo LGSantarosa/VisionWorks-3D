@@ -153,6 +153,9 @@ movimentacao As screen:
                     ) & Set(
                         varCopia,
                         false
+                    ) & Set(
+                        varNovo,
+                        false
                     )
                 PaddingBottom: =16
                 PaddingLeft: =16
