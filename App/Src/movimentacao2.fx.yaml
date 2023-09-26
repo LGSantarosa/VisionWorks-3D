@@ -1211,6 +1211,8 @@ movimentacao2 As screen:
                 DisplayMode: =Parent.DisplayMode
                 Font: =varFonte
                 Height: =70
+                HintText: |-
+                    ="Ex: PEDRO"
                 HoverBorderColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =varCorHover
                 MaxLength: =Parent.MaxLength
@@ -1863,15 +1865,10 @@ movimentacao2 As screen:
 
         Status_DataCard2 As typedDataCard.comboBoxEditCard:
             BorderStyle: =BorderStyle.Solid
-            DataField: ="field_0"
+            DataField: ="Status"
             Default: =
             DisplayMode: =Parent.DisplayMode
-            DisplayName: |-
-                =DataSourceInfo(
-                    [@CONTROLEDEMATERIAIS],
-                    DataSourceInfo.DisplayName,
-                    "field_0"
-                )
+            DisplayName: =DataSourceInfo([@CONTROLEDEMATERIAIS3D],DataSourceInfo.DisplayName,"Status")
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false
@@ -1909,7 +1906,7 @@ movimentacao2 As screen:
                 HoverFill: =varCorHover
                 InputTextPlaceholder: ="Tipo de movimentação"
                 IsSearchable: =false
-                Items: =Choices([@CONTROLEDEMATERIAIS].Status)
+                Items: =Choices([@CONTROLEDEMATERIAIS3D].Status)
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                 PressedBorderColor: =Color.Black
                 PressedColor: =Color.White
@@ -2070,7 +2067,7 @@ movimentacao2 As screen:
                     DataCardValue9.Selected.Value = "Entrada",
                     If(
                         DataCardValue17.Selected.Value = Blank() Or DataCardValue9.Selected.Value = Blank() Or 
-                        DataCardValue16.Text = "" Or DataCardValue11.Text = "",
+                        DataCardValue16.Text = "" Or DataCardValue11.Text = "" Or Value(DataCardValue16.Text) > varProduto.'Quant.' Or DataCardValue12.Text = "" Or DataCardValue24.SelectedDate > Now(),
                         Notify(
                             "Dados Inválidos",
                             NotificationType.Error
@@ -2103,19 +2100,19 @@ movimentacao2 As screen:
                             Office365Outlook.SendEmailV2(
                                 "luiz.santarosa-extern@renault.com",
                                 "Estoque: " & varMatSoma,
-                                "Estoque em falta de " & DataCardValue3.Selected.Value & " " & DataCardValue2.Selected.Value & " Diâmetro: " & DataCardValue27.Selected.Value
+                                "Estoque em falta de " & DataCardValue3.Selected.Value & " " & DataCardValue2.Selected.Value & " Diâmetro: " & If(DataCardValue27.Selected.Value = "175","1,75mm","2,85mm")
                             ) &&
                 
                             Office365Outlook.SendEmailV2(
                                 "murillo.azevedo-extern@renault.com",
                                 "Estoque: " & varMatSoma,
-                                "Estoque em falta de " & DataCardValue3.Selected.Value & " " & DataCardValue2.Selected.Value & " Diâmetro: " & DataCardValue27.Selected.Value
+                                "Estoque em falta de " & DataCardValue3.Selected.Value & " " & DataCardValue2.Selected.Value & " Diâmetro: " & If(DataCardValue27.Selected.Value = "175","1,75mm","2,85mm")
                             ) &&
                 
                             Office365Outlook.SendEmailV2(
                                 "bruna.cardoso@renault.com",
                                 "Estoque: " & varMat,
-                                "Estoque em falta de " & DataCardValue3.Selected.Value & " " & DataCardValue2.Selected.Value & " Diâmetro: " & DataCardValue27.Selected.Value
+                                "Estoque em falta de " & DataCardValue3.Selected.Value & " " & DataCardValue2.Selected.Value & " Diâmetro: " & If(DataCardValue27.Selected.Value = "175","1,75mm","2,85mm")
                             )
                         );
                         Navigate(principal) & Reset(TextSearchBox1_1) & Refresh('Estoque 3D') & Refresh(CONTROLEDEMATERIAIS3D) & ResetForm(Form1) & ResetForm(Form3) & Reset(Radio1_2) & Reset(Radio1_3) & UpdateContext({varFiltro: false}) & Set(
@@ -2125,7 +2122,7 @@ movimentacao2 As screen:
                     ),
                     If( 
                         DataCardValue17.Selected.Value = Blank() Or DataCardValue9.Selected.Value = Blank() Or 
-                        DataCardValue16.Text = "" Or DataCardValue11.Text = "" Or Value(DataCardValue16.Text) > varProduto.'Quant.',
+                        DataCardValue16.Text = "" Or DataCardValue11.Text = "" Or Value(DataCardValue16.Text) > varProduto.'Quant.' Or DataCardValue12.Text = "" Or DataCardValue24.SelectedDate > Now(),
                         Notify(
                             "Dados inválidos",
                             NotificationType.Error
@@ -2158,19 +2155,19 @@ movimentacao2 As screen:
                             Office365Outlook.SendEmailV2(
                                 "luiz.santarosa-extern@renault.com",
                                 "Estoque: " & varMat,
-                                "Estoque em falta de " & DataCardValue3.Selected.Value & " " & DataCardValue2.Selected.Value & " Diâmetro: " & DataCardValue27.Selected.Value
+                                "Estoque em falta de " & DataCardValue3.Selected.Value & " " & DataCardValue2.Selected.Value & " Diâmetro: " & If(DataCardValue27.Selected.Value = "175","1,75mm","2,85mm")
                             ) &&
                 
                             Office365Outlook.SendEmailV2(
                                 "murillo.azevedo-extern@renault.com",
                                 "Estoque: " & varMat,
-                                "Estoque em falta de " & DataCardValue3.Selected.Value & " " & DataCardValue2.Selected.Value & " Diâmetro: " & DataCardValue27.Selected.Value
+                                "Estoque em falta de " & DataCardValue3.Selected.Value & " " & DataCardValue2.Selected.Value & " Diâmetro: " & If(DataCardValue27.Selected.Value = "175","1,75mm","2,85mm")
                             ) &&
                 
                             Office365Outlook.SendEmailV2(
                                 "bruna.cardoso@renault.com",
                                 "Estoque: " & varMat,
-                                "Estoque em falta de " & DataCardValue3.Selected.Value & " " & DataCardValue2.Selected.Value & " Diâmetro: " & DataCardValue27.Selected.Value
+                                "Estoque em falta de " & DataCardValue3.Selected.Value & " " & DataCardValue2.Selected.Value & " Diâmetro: " & If(DataCardValue27.Selected.Value = "175","1,75mm","2,85mm")
                             )
                         );
                         Navigate(principal) & Reset(TextSearchBox1_1) & Refresh('Estoque 3D') & ResetForm(Form1) & ResetForm(Form3) & Reset(Radio1_2) & Reset(Radio1_3) & UpdateContext({varFiltro: false}) & Set(
