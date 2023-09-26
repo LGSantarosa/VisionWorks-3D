@@ -327,7 +327,10 @@ movimentacao As screen:
                 ) & Set(
                     varVoltar,
                     false
-                ) & Set(varNovo,true)
+                ) & Set(
+                    varNovo,
+                    true
+                )
             Width: =75
             X: =535
             Y: =1030

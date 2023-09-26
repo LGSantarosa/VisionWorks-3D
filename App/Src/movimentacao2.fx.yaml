@@ -2067,7 +2067,7 @@ movimentacao2 As screen:
                     DataCardValue9.Selected.Value = "Entrada",
                     If(
                         DataCardValue17.Selected.Value = Blank() Or DataCardValue9.Selected.Value = Blank() Or 
-                        DataCardValue16.Text = "" Or DataCardValue11.Text = "" Or Value(DataCardValue16.Text) > varProduto.'Quant.' Or DataCardValue12.Text = "" Or DataCardValue24.SelectedDate > Now(),
+                        DataCardValue16.Text = "" Or DataCardValue11.Text = "" Or If(varNovo = false,Value(DataCardValue16.Text) > varProduto.'Quant.') Or DataCardValue12.Text = "" Or DataCardValue24.SelectedDate > Now(),
                         Notify(
                             "Dados Inválidos",
                             NotificationType.Error
@@ -2122,7 +2122,7 @@ movimentacao2 As screen:
                     ),
                     If( 
                         DataCardValue17.Selected.Value = Blank() Or DataCardValue9.Selected.Value = Blank() Or 
-                        DataCardValue16.Text = "" Or DataCardValue11.Text = "" Or Value(DataCardValue16.Text) > varProduto.'Quant.' Or DataCardValue12.Text = "" Or DataCardValue24.SelectedDate > Now(),
+                        DataCardValue16.Text = "" Or DataCardValue11.Text = "" Or If(varNovo = false,Value(DataCardValue16.Text) > varProduto.'Quant.') Or DataCardValue12.Text = "" Or DataCardValue24.SelectedDate > Now(),
                         Notify(
                             "Dados inválidos",
                             NotificationType.Error
@@ -2212,6 +2212,7 @@ movimentacao2 As screen:
             OnSelect: |-
                 =If(
                     varVoltar = false,
+                    ResetForm(Form1) & ResetForm(Form3) &
                     Navigate(
                         movimentacao,
                         ScreenTransition.CoverRight
@@ -2222,6 +2223,7 @@ movimentacao2 As screen:
                         varNovo,
                         false
                     ),
+                    ResetForm(Form1) & ResetForm(Form3) &
                     Navigate(
                         'Localizar 2',
                         ScreenTransition.CoverRight
