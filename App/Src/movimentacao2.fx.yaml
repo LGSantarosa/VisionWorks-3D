@@ -1548,7 +1548,7 @@ movimentacao2 As screen:
                     Form1.Mode = FormMode.New,
                     DisplayMode.Edit,
                     If(
-                        varProduto.Fabricante = Blank(),
+                        varProduto.Diâmetro.Value = Blank(),
                         DisplayMode.Edit,
                         DisplayMode.Disabled
                     )
