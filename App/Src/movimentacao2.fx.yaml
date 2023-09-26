@@ -2081,26 +2081,41 @@ movimentacao2 As screen:
                             NotificationType.Success
                         );
                         If(
-                            DataCardValue3.Selected.Value = "PA6" && DataCardValue3.Selected.Value = "Natural" && varMatSoma <= 5 Or 
-                            DataCardValue3.Selected.Value = "ABS" && DataCardValue3.Selected.Value = "BLACK" && varMatSoma <= 5 Or
-                            varMatSoma <= 5,
+                            DataCardValue3.Selected.Value = "PLA" && DataCardValue3.Selected.Value = "BLACK" && DataCardValue27.Selected.Value = "175" && varMatSoma <= 10 Or 
+                            DataCardValue3.Selected.Value = "PLA" && DataCardValue3.Selected.Value = "WHITE" && DataCardValue27.Selected.Value = "175" && varMatSoma <= 10 Or 
+                            DataCardValue3.Selected.Value = "ABS" && DataCardValue3.Selected.Value = "BLACK" && DataCardValue27.Selected.Value = "175" && varMatSoma <= 8 Or 
+                            DataCardValue3.Selected.Value = "ABS" && DataCardValue3.Selected.Value = "WHITE" && DataCardValue27.Selected.Value = "175" && varMatSoma <= 5 Or 
+                            DataCardValue3.Selected.Value = "PETG" && DataCardValue3.Selected.Value = "BLACK" && DataCardValue27.Selected.Value = "175" && varMatSoma <= 8 Or 
+                            DataCardValue3.Selected.Value = "TPU" && DataCardValue3.Selected.Value = "BLACK" && DataCardValue27.Selected.Value = "175" && varMatSoma <= 10 Or 
+                            DataCardValue3.Selected.Value = "PA" && DataCardValue3.Selected.Value = "BLACK" &&  DataCardValue27.Selected.Value = "175" && varMatSoma <= 2 Or 
+                            DataCardValue3.Selected.Value = "ONYX" && DataCardValue3.Selected.Value = "BLACK" && DataCardValue27.Selected.Value = "175" && varMatSoma <= 3 Or 
+                            DataCardValue3.Selected.Value = "PLA" && DataCardValue3.Selected.Value = "BLACK" && DataCardValue27.Selected.Value = "285" && varMatSoma <= 10  Or 
+                            DataCardValue3.Selected.Value = "PLA" && DataCardValue3.Selected.Value = "WHITE" && DataCardValue27.Selected.Value = "285" && varMatSoma <= 10 Or 
+                            DataCardValue3.Selected.Value = "ABS" && DataCardValue3.Selected.Value = "BLACK" && DataCardValue27.Selected.Value = "285" && varMatSoma <= 8  Or 
+                            DataCardValue3.Selected.Value = "ABS" && DataCardValue3.Selected.Value = "WHITE" && DataCardValue27.Selected.Value = "285" && varMatSoma <= 5 Or 
+                            DataCardValue3.Selected.Value = "PETG" && DataCardValue3.Selected.Value = "BLACK" && DataCardValue27.Selected.Value = "285" && varMatSoma <= 10 Or 
+                            DataCardValue3.Selected.Value = "TPU" && DataCardValue3.Selected.Value = "BLACK" && DataCardValue27.Selected.Value = "285" && varMatSoma <= 2 Or 
+                            DataCardValue3.Selected.Value = "PA" && DataCardValue3.Selected.Value = "WHITE" && DataCardValue27.Selected.Value = "285" && varMatSoma <= 5 Or 
+                            DataCardValue3.Selected.Value = "ASA" && DataCardValue3.Selected.Value = "BLACK" && DataCardValue27.Selected.Value = "285" && varMatSoma <= 2 Or 
+                            DataCardValue3.Selected.Value = "ASA" && DataCardValue3.Selected.Value = "WHITE" && DataCardValue27.Selected.Value = "285" && varMatSoma <= 2 Or 
+                            DataCardValue3.Selected.Value = "PP" && DataCardValue3.Selected.Value = "WHITE" && DataCardValue27.Selected.Value = "285" && varMatSoma <= 3,
                 
                             Office365Outlook.SendEmailV2(
                                 "luiz.santarosa-extern@renault.com",
                                 "Estoque: " & varMatSoma,
-                                "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & " Mínimo 5"
+                                "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & If(varNovo = true, varMaterial,DataCardValue27.Selected.Value)
                             ) &&
                 
                             Office365Outlook.SendEmailV2(
                                 "murillo.azevedo-extern@renault.com",
                                 "Estoque: " & varMatSoma,
-                                "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & " Mínimo 5"
+                                "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & If(varNovo = true, varMaterial,DataCardValue27.Selected.Value)
                             ) &&
                 
                             Office365Outlook.SendEmailV2(
                                 "bruna.cardoso@renault.com",
                                 "Estoque: " & varMat,
-                                "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & " Mínimo 5"
+                                "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & If(varNovo = true, varMaterial,DataCardValue27.Selected.Value)
                             )
                         );
                         Navigate(principal) & Reset(TextSearchBox1_1) & Refresh('Estoque 3D') & Refresh(CONTROLEDEMATERIAIS3D) & ResetForm(Form1) & ResetForm(Form3) & Reset(Radio1_2) & Reset(Radio1_3) & UpdateContext({varFiltro: false}) & Set(
@@ -2121,26 +2136,41 @@ movimentacao2 As screen:
                             NotificationType.Success
                         );
                         If(
-                            DataCardValue3.Selected.Value = "PA6" && DataCardValue3.Selected.Value = "Natural" && varMat <= 5 Or 
-                            DataCardValue3.Selected.Value = "ABS" && DataCardValue3.Selected.Value = "BLACK" && varMat  <= 5 Or
-                            varMat <= 5,
+                            DataCardValue3.Selected.Value = "PLA" && DataCardValue3.Selected.Value = "BLACK" && DataCardValue27.Selected.Value = "175" && varMat <= 10 Or 
+                            DataCardValue3.Selected.Value = "PLA" && DataCardValue3.Selected.Value = "WHITE" && DataCardValue27.Selected.Value = "175" && varMat <= 10 Or 
+                            DataCardValue3.Selected.Value = "ABS" && DataCardValue3.Selected.Value = "BLACK" && DataCardValue27.Selected.Value = "175" && varMat <= 8 Or 
+                            DataCardValue3.Selected.Value = "ABS" && DataCardValue3.Selected.Value = "WHITE" && DataCardValue27.Selected.Value = "175" && varMat <= 5 Or 
+                            DataCardValue3.Selected.Value = "PETG" && DataCardValue3.Selected.Value = "BLACK" && DataCardValue27.Selected.Value = "175" && varMat <= 8 Or 
+                            DataCardValue3.Selected.Value = "TPU" && DataCardValue3.Selected.Value = "BLACK" && DataCardValue27.Selected.Value = "175" && varMat <= 10 Or 
+                            DataCardValue3.Selected.Value = "PA" && DataCardValue3.Selected.Value = "BLACK" &&  DataCardValue27.Selected.Value = "175" && varMat <= 2 Or 
+                            DataCardValue3.Selected.Value = "ONYX" && DataCardValue3.Selected.Value = "BLACK" && DataCardValue27.Selected.Value = "175" && varMat <= 3 Or 
+                            DataCardValue3.Selected.Value = "PLA" && DataCardValue3.Selected.Value = "BLACK" && DataCardValue27.Selected.Value = "285" && varMat <= 10  Or 
+                            DataCardValue3.Selected.Value = "PLA" && DataCardValue3.Selected.Value = "WHITE" && DataCardValue27.Selected.Value = "285" && varMat <= 10 Or 
+                            DataCardValue3.Selected.Value = "ABS" && DataCardValue3.Selected.Value = "BLACK" && DataCardValue27.Selected.Value = "285" && varMat <= 8  Or 
+                            DataCardValue3.Selected.Value = "ABS" && DataCardValue3.Selected.Value = "WHITE" && DataCardValue27.Selected.Value = "285" && varMat <= 5 Or 
+                            DataCardValue3.Selected.Value = "PETG" && DataCardValue3.Selected.Value = "BLACK" && DataCardValue27.Selected.Value = "285" && varMat <= 10 Or 
+                            DataCardValue3.Selected.Value = "TPU" && DataCardValue3.Selected.Value = "BLACK" && DataCardValue27.Selected.Value = "285" && varMat <= 2 Or 
+                            DataCardValue3.Selected.Value = "PA" && DataCardValue3.Selected.Value = "WHITE" && DataCardValue27.Selected.Value = "285" && varMat <= 5 Or 
+                            DataCardValue3.Selected.Value = "ASA" && DataCardValue3.Selected.Value = "BLACK" && DataCardValue27.Selected.Value = "285" && varMat <= 2 Or 
+                            DataCardValue3.Selected.Value = "ASA" && DataCardValue3.Selected.Value = "WHITE" && DataCardValue27.Selected.Value = "285" && varMat<= 2 Or 
+                            DataCardValue3.Selected.Value = "PP" && DataCardValue3.Selected.Value = "WHITE" && DataCardValue27.Selected.Value = "285" && varMat <= 3,
                 
                             Office365Outlook.SendEmailV2(
                                 "luiz.santarosa-extern@renault.com",
                                 "Estoque: " & varMat,
-                                "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & " Mínimo 5"
+                                "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & If(varNovo = true, varMaterial,DataCardValue27.Selected.Value)
                             ) &&
                 
                             Office365Outlook.SendEmailV2(
                                 "murillo.azevedo-extern@renault.com",
                                 "Estoque: " & varMat,
-                                "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & " Mínimo 5"
+                                "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & If(varNovo = true, varMaterial,DataCardValue27.Selected.Value)
                             ) &&
                 
                             Office365Outlook.SendEmailV2(
                                 "bruna.cardoso@renault.com",
                                 "Estoque: " & varMat,
-                                "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & " Mínimo 5"
+                                "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & If(varNovo = true, varMaterial,DataCardValue27.Selected.Value)
                             )
                         );
                         Navigate(principal) & Reset(TextSearchBox1_1) & Refresh('Estoque 3D') & ResetForm(Form1) & ResetForm(Form3) & Reset(Radio1_2) & Reset(Radio1_3) & UpdateContext({varFiltro: false}) & Set(
