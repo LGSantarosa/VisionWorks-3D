@@ -2103,19 +2103,19 @@ movimentacao2 As screen:
                             Office365Outlook.SendEmailV2(
                                 "luiz.santarosa-extern@renault.com",
                                 "Estoque: " & varMatSoma,
-                                "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & If(varNovo = true, varMaterial,DataCardValue27.Selected.Value)
+                                "Estoque em falta de " & DataCardValue3.Selected.Value & " " & DataCardValue2.Selected.Value & " Diâmetro: " & DataCardValue27.Selected.Value
                             ) &&
                 
                             Office365Outlook.SendEmailV2(
                                 "murillo.azevedo-extern@renault.com",
                                 "Estoque: " & varMatSoma,
-                                "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & If(varNovo = true, varMaterial,DataCardValue27.Selected.Value)
+                                "Estoque em falta de " & DataCardValue3.Selected.Value & " " & DataCardValue2.Selected.Value & " Diâmetro: " & DataCardValue27.Selected.Value
                             ) &&
                 
                             Office365Outlook.SendEmailV2(
                                 "bruna.cardoso@renault.com",
                                 "Estoque: " & varMat,
-                                "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & If(varNovo = true, varMaterial,DataCardValue27.Selected.Value)
+                                "Estoque em falta de " & DataCardValue3.Selected.Value & " " & DataCardValue2.Selected.Value & " Diâmetro: " & DataCardValue27.Selected.Value
                             )
                         );
                         Navigate(principal) & Reset(TextSearchBox1_1) & Refresh('Estoque 3D') & Refresh(CONTROLEDEMATERIAIS3D) & ResetForm(Form1) & ResetForm(Form3) & Reset(Radio1_2) & Reset(Radio1_3) & UpdateContext({varFiltro: false}) & Set(
@@ -2158,19 +2158,19 @@ movimentacao2 As screen:
                             Office365Outlook.SendEmailV2(
                                 "luiz.santarosa-extern@renault.com",
                                 "Estoque: " & varMat,
-                                "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & If(varNovo = true, varMaterial,DataCardValue27.Selected.Value)
+                                "Estoque em falta de " & DataCardValue3.Selected.Value & " " & DataCardValue2.Selected.Value & " Diâmetro: " & DataCardValue27.Selected.Value
                             ) &&
                 
                             Office365Outlook.SendEmailV2(
                                 "murillo.azevedo-extern@renault.com",
                                 "Estoque: " & varMat,
-                                "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & If(varNovo = true, varMaterial,DataCardValue27.Selected.Value)
+                                "Estoque em falta de " & DataCardValue3.Selected.Value & " " & DataCardValue2.Selected.Value & " Diâmetro: " & DataCardValue27.Selected.Value
                             ) &&
                 
                             Office365Outlook.SendEmailV2(
                                 "bruna.cardoso@renault.com",
                                 "Estoque: " & varMat,
-                                "Estoque em falta de " & If(varNovo = true, varCorB, DataCardValue3.Selected.Value) & " " & If(varNovo = true, varMaterial,DataCardValue2.Selected.Value) & If(varNovo = true, varMaterial,DataCardValue27.Selected.Value)
+                                "Estoque em falta de " & DataCardValue3.Selected.Value & " " & DataCardValue2.Selected.Value & " Diâmetro: " & DataCardValue27.Selected.Value
                             )
                         );
                         Navigate(principal) & Reset(TextSearchBox1_1) & Refresh('Estoque 3D') & ResetForm(Form1) & ResetForm(Form3) & Reset(Radio1_2) & Reset(Radio1_3) & UpdateContext({varFiltro: false}) & Set(
