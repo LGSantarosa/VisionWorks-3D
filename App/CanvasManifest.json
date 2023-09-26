@@ -122,7 +122,7 @@
   },
   "PublishInfo": {
     "AppName": "Estoque 3D",
-    "BackgroundColor": "rgba(0, 0, 0, 1)",
+    "BackgroundColor": "rgba(170, 170, 221, 1)",
     "IconColor": "RGBA(255,255,255,1)",
     "IconName": "",
     "LogoFileName": "logo.jpg",
