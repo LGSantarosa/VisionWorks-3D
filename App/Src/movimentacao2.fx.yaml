@@ -2100,19 +2100,19 @@ movimentacao2 As screen:
                             Office365Outlook.SendEmailV2(
                                 "luiz.santarosa-extern@renault.com",
                                 "Estoque: " & varMatSoma,
-                                "Estoque em falta de " & DataCardValue3.Selected.Value & " " & DataCardValue2.Selected.Value & " Diâmetro: " & If(DataCardValue27.Selected.Value = "175","1,75mm","2,85mm")
+                                "Estoque em falta de " & DataCardValue3.Selected.Value & " " & DataCardValue2.Selected.Value & " Diâmetro: " & If(DataCardValue27.Selected.Value = "175","1,75mm","2,85mm") & " Marca: " & varProduto.Fabricante
                             ) &&
                 
                             Office365Outlook.SendEmailV2(
                                 "murillo.azevedo-extern@renault.com",
                                 "Estoque: " & varMatSoma,
-                                "Estoque em falta de " & DataCardValue3.Selected.Value & " " & DataCardValue2.Selected.Value & " Diâmetro: " & If(DataCardValue27.Selected.Value = "175","1,75mm","2,85mm")
+                                "Estoque em falta de " & DataCardValue3.Selected.Value & " " & DataCardValue2.Selected.Value & " Diâmetro: " & If(DataCardValue27.Selected.Value = "175","1,75mm","2,85mm") & " Marca: " & varProduto.Fabricante
                             ) &&
                 
                             Office365Outlook.SendEmailV2(
                                 "bruna.cardoso@renault.com",
                                 "Estoque: " & varMat,
-                                "Estoque em falta de " & DataCardValue3.Selected.Value & " " & DataCardValue2.Selected.Value & " Diâmetro: " & If(DataCardValue27.Selected.Value = "175","1,75mm","2,85mm")
+                                "Estoque em falta de " & DataCardValue3.Selected.Value & " " & DataCardValue2.Selected.Value & " Diâmetro: " & If(DataCardValue27.Selected.Value = "175","1,75mm","2,85mm") & " Marca: " & varProduto.Fabricante
                             )
                         );
                         Navigate(principal) & Reset(TextSearchBox1_1) & Refresh('Estoque 3D') & Refresh(CONTROLEDEMATERIAIS3D) & ResetForm(Form1) & ResetForm(Form3) & Reset(Radio1_2) & Reset(Radio1_3) & UpdateContext({varFiltro: false}) & Set(
@@ -2155,19 +2155,19 @@ movimentacao2 As screen:
                             Office365Outlook.SendEmailV2(
                                 "luiz.santarosa-extern@renault.com",
                                 "Estoque: " & varMat,
-                                "Estoque em falta de " & DataCardValue3.Selected.Value & " " & DataCardValue2.Selected.Value & " Diâmetro: " & If(DataCardValue27.Selected.Value = "175","1,75mm","2,85mm")
+                                "Estoque em falta de " & DataCardValue3.Selected.Value & " " & DataCardValue2.Selected.Value & " Diâmetro: " & If(DataCardValue27.Selected.Value = "175","1,75mm","2,85mm") & " Marca: " & varProduto.Fabricante
                             ) &&
                 
                             Office365Outlook.SendEmailV2(
                                 "murillo.azevedo-extern@renault.com",
                                 "Estoque: " & varMat,
-                                "Estoque em falta de " & DataCardValue3.Selected.Value & " " & DataCardValue2.Selected.Value & " Diâmetro: " & If(DataCardValue27.Selected.Value = "175","1,75mm","2,85mm")
+                                "Estoque em falta de " & DataCardValue3.Selected.Value & " " & DataCardValue2.Selected.Value & " Diâmetro: " & If(DataCardValue27.Selected.Value = "175","1,75mm","2,85mm") & " Marca: " & varProduto.Fabricante
                             ) &&
                 
                             Office365Outlook.SendEmailV2(
                                 "bruna.cardoso@renault.com",
                                 "Estoque: " & varMat,
-                                "Estoque em falta de " & DataCardValue3.Selected.Value & " " & DataCardValue2.Selected.Value & " Diâmetro: " & If(DataCardValue27.Selected.Value = "175","1,75mm","2,85mm")
+                                "Estoque em falta de " & DataCardValue3.Selected.Value & " " & DataCardValue2.Selected.Value & " Diâmetro: " & If(DataCardValue27.Selected.Value = "175","1,75mm","2,85mm") & " Marca: " & varProduto.Fabricante
                             )
                         );
                         Navigate(principal) & Reset(TextSearchBox1_1) & Refresh('Estoque 3D') & ResetForm(Form1) & ResetForm(Form3) & Reset(Radio1_2) & Reset(Radio1_3) & UpdateContext({varFiltro: false}) & Set(
