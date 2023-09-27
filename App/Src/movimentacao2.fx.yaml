@@ -1212,7 +1212,7 @@ movimentacao2 As screen:
                 Font: =varFonte
                 Height: =70
                 HintText: |-
-                    ="Ex: PEDRO"
+                    ="Ex: LUIZ"
                 HoverBorderColor: =RGBA(0, 0, 0, 1)
                 HoverFill: =varCorHover
                 MaxLength: =Parent.MaxLength
@@ -2067,7 +2067,7 @@ movimentacao2 As screen:
                     DataCardValue9.Selected.Value = "Entrada",
                     If(
                         DataCardValue17.Selected.Value = Blank() Or DataCardValue9.Selected.Value = Blank() Or 
-                        DataCardValue16.Text = "" Or DataCardValue11.Text = "" Or If(varNovo = false,Value(DataCardValue16.Text) > varProduto.'Quant.') Or DataCardValue12.Text = "" Or DataCardValue24.SelectedDate > Now(),
+                        DataCardValue16.Text = "" Or DataCardValue11.Text = "" Or DataCardValue12.Text = "" Or DataCardValue24.SelectedDate > Now(),
                         Notify(
                             "Dados Inválidos",
                             NotificationType.Error
