@@ -3104,36 +3104,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.Design_sem_nome__3_-removebg-preview"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.Design_sem_nome__3_-removebg-preview",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Design_sem_nome__3_-removebg-preview",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "localizar.Gallery2_1.Title5_1.X"
                 }
               ],

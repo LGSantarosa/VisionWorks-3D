@@ -13,7 +13,7 @@ movimentacao As screen:
 
     "'Logo Estoque' As image":
         Height: =210
-        Image: =Switch(varCor,Color.Yellow,'MicrosoftTeams-image (2)',Color.White,'MicrosoftTeams-image (2)',Color.Black,'MicrosoftTeams-image (6)','MicrosoftTeams-image (6)')
+        Image: =Switch(varCor,Color.Yellow,'Design_sem_nome__3_-removebg-preview',Color.White,'Design_sem_nome__3_-removebg-preview',Color.Black,'02_10_2023_08_05_06','02_10_2023_08_05_06')
         Width: =640
         ZIndex: =11
 
