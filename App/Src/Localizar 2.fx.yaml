@@ -10,6 +10,7 @@
             Color.White,
             Color.Black
         )
+    LoadingSpinner: =LoadingSpinner.Data
 
     Form2 As form:
         DataSource: ='Estoque 3D'

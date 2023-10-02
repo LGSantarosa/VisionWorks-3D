@@ -11,6 +11,7 @@ localizar As screen:
             Color.White,
             Color.Black
         )
+    LoadingSpinner: =LoadingSpinner.Data
 
     "'Tooling Logo_2' As image":
         Image: ='Logo Tooling - vetor'

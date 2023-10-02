@@ -12,6 +12,7 @@ login As screen:
             Color.Black
         )
     ImagePosition: =ImagePosition.Center
+    LoadingSpinner: =LoadingSpinner.Data
 
     Image5 As image:
         DisplayMode: =DisplayMode.View

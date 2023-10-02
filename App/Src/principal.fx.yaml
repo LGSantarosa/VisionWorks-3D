@@ -12,6 +12,7 @@ principal As screen:
             Color.Black
         )
     ImagePosition: =ImagePosition.Fill
+    LoadingSpinner: =LoadingSpinner.Data
 
     Label1 As label:
         Align: =Align.Center

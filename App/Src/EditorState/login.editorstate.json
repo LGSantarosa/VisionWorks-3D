@@ -609,7 +609,14 @@
         "Width",
         "Size",
         "Orientation",
-        "LoadingSpinner",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "LoadingSpinner.None",
+          "InvariantPropertyName": "LoadingSpinner",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "LoadingSpinnerColor",
         {
           "AFDDataSourceName": "",
