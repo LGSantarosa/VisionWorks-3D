@@ -22,7 +22,7 @@ localizar As screen:
 
     "'Logo Estoque_1' As image":
         Height: =210
-        Image: =Switch(varCor,Color.Yellow,'Design_sem_nome__3_-removebg-preview',Color.White,'Design_sem_nome__3_-removebg-preview',Color.Black,'02_10_2023_08_05_06','02_10_2023_08_05_06')
+        Image: =Switch(varCor,Color.Yellow,'Design_sem_nome__3_-removebg-preview',Color.White,'Design_sem_nome__3_-removebg-preview',Color.Black,'Design_sem_nome__5_-removebg-preview','Design_sem_nome__5_-removebg-preview')
         Width: =640
         ZIndex: =6
 
