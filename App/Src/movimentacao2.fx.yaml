@@ -2099,7 +2099,7 @@ movimentacao2 As screen:
                             DataCardValue3.Selected.Value = "PP" && DataCardValue2.Selected.Value = "WHITE" && DataCardValue27.Selected.Value = "285" && varMatSoma <= 3,
                 
                             Office365Outlook.SendEmailV2(
-                                "luiz.santarosa-extern@renault.com",
+                                "thiago.leal-extern@renault.com",
                                 "Estoque: " & varMatSoma,
                                 "Estoque em falta de " & DataCardValue3.Selected.Value & " " & DataCardValue2.Selected.Value & " Diâmetro: " & If(DataCardValue27.Selected.Value = "175","1,75mm","2,85mm") & " Marca: " & varProduto.Fabricante
                             ) &&

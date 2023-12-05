@@ -78,6 +78,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "%TemplateBrowseGalleryBody.ID%",
       "Name": "Body3_1",
+      "OptimizeForDevices": "Off",
       "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -314,6 +315,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Container1",
+      "OptimizeForDevices": "Off",
       "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -503,6 +505,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Filtro_2",
+      "OptimizeForDevices": "Off",
       "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -692,6 +695,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Gallery2_1",
+      "OptimizeForDevices": "Off",
       "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -864,6 +868,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "galleryTemplate3_1",
+      "OptimizeForDevices": "Off",
       "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -900,6 +905,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Group4",
+      "OptimizeForDevices": "Off",
       "ParentIndex": 11,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -951,6 +957,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Group6",
+      "OptimizeForDevices": "Off",
       "ParentIndex": 12,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -1050,6 +1057,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Icon3",
+      "OptimizeForDevices": "Off",
       "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -1277,6 +1285,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Icon3_1",
+      "OptimizeForDevices": "Off",
       "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -1483,6 +1492,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Icon6",
+      "OptimizeForDevices": "Off",
       "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -1716,6 +1726,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Icon7_2",
+      "OptimizeForDevices": "Off",
       "ParentIndex": 9,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -1953,6 +1964,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Label3_3",
+      "OptimizeForDevices": "Off",
       "ParentIndex": 10,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -2210,6 +2222,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "localizar",
+      "OptimizeForDevices": "Off",
       "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -2319,6 +2332,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Logo Estoque_1",
+      "OptimizeForDevices": "Off",
       "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -2537,6 +2551,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Logo Estoque_2",
+      "OptimizeForDevices": "Off",
       "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -2793,6 +2808,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "%TemplateBrowseGalleryNextIcon.ID%",
       "Name": "NextArrow5_1",
+      "OptimizeForDevices": "Off",
       "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -3104,6 +3120,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Radio1_4",
+      "OptimizeForDevices": "Off",
       "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -3446,6 +3463,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Radio1_5",
+      "OptimizeForDevices": "Off",
       "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -3683,6 +3701,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "%TemplateBrowseGallerySeparator1.ID%",
       "Name": "Separator5_1",
+      "OptimizeForDevices": "Off",
       "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -3854,6 +3873,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "%TemplateBrowseGallerySubtitle.ID%",
       "Name": "Subtitle5_1",
+      "OptimizeForDevices": "Off",
       "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -4267,6 +4287,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "TextSearchBox1_2",
+      "OptimizeForDevices": "Off",
       "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -4589,6 +4610,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "%TemplateBrowseGalleryTitle.ID%",
       "Name": "Title5_1",
+      "OptimizeForDevices": "Off",
       "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
@@ -4850,6 +4872,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Tooling Logo_2",
+      "OptimizeForDevices": "Off",
       "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
