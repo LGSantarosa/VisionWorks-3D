@@ -19,7 +19,7 @@ login As screen:
         Height: =230
         Image: ='Design_sem_nome__5_-removebg-preview'
         Width: =640
-        Y: =220
+        Y: =267
         ZIndex: =1
 
     Button2 As button:
