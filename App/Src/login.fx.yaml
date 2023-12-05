@@ -77,3 +77,11 @@ login As screen:
         Y: =1000
         ZIndex: =6
 
+    Image2 As image:
+        Height: =96
+        Image: ='MicrosoftTeams-image (8)'
+        Width: =320
+        X: =160
+        Y: =188
+        ZIndex: =7
+
