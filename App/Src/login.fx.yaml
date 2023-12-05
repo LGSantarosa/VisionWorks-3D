@@ -22,45 +22,6 @@ login As screen:
         Y: =220
         ZIndex: =1
 
-    TextInput1 As text:
-        BorderColor: =RGBA(0, 0, 0, 1)
-        Default: =""
-        Font: =varFonte
-        Height: =80
-        HintText: ="Senha"
-        HoverBorderColor: =RGBA(0, 0, 0, 1)
-        HoverFill: |-
-            =Switch(varCor,Color.Yellow,ColorFade(ColorValue("#3b89bd"),50%),Color.Black,ColorFade(Color.Black,90%),Color.White,ColorFade(ColorValue("#f8e458"),50%),ColorFade(Color.Black,90%))
-        Mode: =TextMode.Password
-        RadiusBottomLeft: =15
-        RadiusBottomRight: =15
-        RadiusTopLeft: =15
-        RadiusTopRight: =15
-        Size: =Sum(25 + varLetra)
-        Width: =490
-        X: =75
-        Y: =600
-        ZIndex: =3
-
-    TextInput2 As text:
-        BorderColor: =RGBA(0, 0, 0, 1)
-        Default: =""
-        Font: =varFonte
-        Height: =80
-        HintText: ="Login"
-        HoverBorderColor: =RGBA(0, 0, 0, 1)
-        HoverFill: |-
-            =Switch(varCor,Color.Yellow,ColorFade(ColorValue("#3b89bd"),50%),Color.Black,ColorFade(Color.Black,90%),Color.White,ColorFade(ColorValue("#f8e458"),50%),ColorFade(Color.Black,90%))
-        RadiusBottomLeft: =15
-        RadiusBottomRight: =15
-        RadiusTopLeft: =15
-        RadiusTopRight: =15
-        Size: =Sum(25 + varLetra)
-        Width: =490
-        X: =75
-        Y: =500
-        ZIndex: =4
-
     Button2 As button:
         BorderColor: =ColorFade(Color.Black, -15%)
         Color: =Color.Black
@@ -71,9 +32,8 @@ login As screen:
         HoverFill: |-
             =Switch(varCor,Color.Yellow,ColorFade(ColorValue("#3b89bd"),50%),Color.Black,ColorFade(Color.Black,50%),Color.White,ColorFade(ColorValue("#f8e458"),50%),ColorFade(Color.Black,50%))
         OnSelect: |-
-            =If(
-                TextInput1.Text = "123" && TextInput2.Text = "Tooling",
-                Navigate(
+            =
+            Navigate(
                     principal,
                     ScreenTransition.Cover
                 ) & Set(
@@ -88,12 +48,8 @@ login As screen:
                 ) & Set(
                     varCorLetra,
                     Color.Black
-                ),
-                Notify(
-                    "Dados incorretos",
-                    NotificationType.Error
                 )
-            ) && Set(
+             && Set(
                 varLetra,
                 5
             )
@@ -106,10 +62,10 @@ login As screen:
         RadiusTopLeft: =15
         RadiusTopRight: =15
         Size: =Sum(25 + varLetra)
-        Text: ="Login"
+        Text: ="Entrar"
         Width: =490
         X: =75
-        Y: =700
+        Y: =600
         ZIndex: =5
 
     "'Tooling Logo_1' As image":
