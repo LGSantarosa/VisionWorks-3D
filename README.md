@@ -7,5 +7,5 @@ O app permite o gerenciamento eficiente de entradas, saídas e organização dos
 
 ## Visualização do App
 
-[Tutorial do App VisionWorks](https://www.canva.com/design/DAFu7HXNQj8/HCOguin9Pqxc21LxgZQ11A/edit?utm_content=DAFu7HXNQj8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+[Tutorial de uso App VisionWorks](https://www.canva.com/design/DAFu7HXNQj8/HCOguin9Pqxc21LxgZQ11A/edit?utm_content=DAFu7HXNQj8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
